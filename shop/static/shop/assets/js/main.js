@@ -259,19 +259,17 @@
     $rangeSlider.slider({
         range: true,
         min: 0,
-        max: 300,
-        values: [35, 219],
+        max: 10000,
+        values: [0, 10000],
         slide: function(event, ui) {
-            $amount.html("$" + ui.values[0] + " - $" + ui.values[1]);
+            $amount.html("Rs" + ui.values[0] + " - Rs" + ui.values[1]);
             $amount1.val(ui.values[0]);
             $amount2.val(ui.values[1]);
         }
     });
-    $("#ex2").slider({});
 
-    
-    $amount.html("$" + $rangeSlider.slider("values", 0) +
-        " - $" + $rangeSlider.slider("values", 1));
+    $amount.html("Rs" + $rangeSlider.slider("values", 0) +
+        " - Rs" + $rangeSlider.slider("values", 1));
 
         $('#multi').mdbRange({
             single: {

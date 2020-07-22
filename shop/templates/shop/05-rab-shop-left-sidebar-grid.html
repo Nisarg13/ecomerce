@@ -22,13 +22,15 @@
 {%endblock%}
 {%block main%}
     <main class="main primary-padding">
+        <form method="POST" action="{% url 'filter' %}">
+            {%csrf_token%}
         <div class="product-list">
             <div class="container">
                 <div class="row">                
 
                     <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
                         <div class="storefront-sorting">
-                            <form class="woocommerce-ordering" method="get">
+                            <div class="woocommerce-ordering" >
                                 <select name="orderby" class="orderby">
                                     <option value="menu_order" selected="selected">Default sorting</option>
                                     <option value="popularity">Sort by popularity</option>
@@ -37,7 +39,7 @@
                                     <option value="price">Sort by price: low to high</option>
                                     <option value="price-desc">Sort by price: high to low</option>
                                 </select> 
-                            </form>
+                            </div>
                             <!--form-->
 
                             <div class="short-by">
@@ -228,19 +230,16 @@
                         </div>
                         <!--color-->
 
-                        <section class="mb-4">
+                        <div class="box mb-30">
+                            <h5 class="sec-title">Price</h5>
+                                <div id="slider-range"></div>
+                                <input type="hidden" name="min_price" value="0" id="amount1">
+                                <input type="hidden" name="max_price" value="10000" id="amount2">
+                                <div id="amount" class="mb-45"></div>
 
-                            <h6 class="font-weight-bold mb-3">Price</h6>
-                      
-                            <div class="slider-price d-flex align-items-center my-4">
-                              <span class="font-weight-normal small text-muted mr-2">$0</span>
-                              <form class="multi-range-field w-100 mb-1">
-                                <input id="multi" class="multi-range" type="range" />
-                              </form>
-                              <span class="font-weight-normal small text-muted ml-2">$100</span>
-                            </div>
-                      
-                          </section>
+                                <input type="submit" class=" btn btn-default filter-btn faa-parent animated-hover" value="Filter Now">
+
+                        </div>
                         <!--color-->
 
                         <div class="box sidebar-banner">
@@ -256,6 +255,7 @@
                 </div>
             </div>
         </div>
+        </form>
     </main>
     <!--main-->
 {%endblock%}

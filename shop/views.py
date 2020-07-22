@@ -9,17 +9,19 @@ from django.views.decorators.cache import cache_control
 import stripe
 # Create your views here.
 
-stripe.api_key = "<YOUR STRIPE API KEY>"
+stripe.api_key = "<YOUR SECRET KEY>"
 
 def index(request):
     data=Product.objects.all()
     if "email" in request.session:
-        #w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
-        #request.session['wishlist_length']=len(w_data)
+        w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+        c_data=cart.objects.filter(c_id_id=request.session['cid'])
+        request.session['wishlist_length']=len(w_data)
+        request.session['cart_length']=len(c_data)
         uid=tbl_User.objects.get(email=request.session['email'])
         return render(request,"shop/index.html",{'uid':uid})
     else:
-        return render(request,'shop/index.html',{'data':data})
+        return render(request,"shop/index.html",{'data':data})
 
 
 
@@ -48,6 +50,7 @@ def login(request):
             print("--------------->616161")
             cid=Customer.objects.filter(user_id=uid[0])
             w_data=wishlist_tbl.objects.filter(c_id=cid[0])
+            c_data=cart.objects.filter(c_id=cid[0])
             print("--------------->2151")
             if uid:
                 if uid[0].password==u_password:
@@ -58,6 +61,7 @@ def login(request):
                         request.session['email']=uid[0].email
                         request.session['cid']=cid[0].id
                         request.session['wishlist_length']=len(w_data)
+                        request.session['cart_length']=len(c_data)
                         print("------------->wishlist:",request.session['wishlist_length'])
                         print("---------------------->",cid[0].id)
                         return HttpResponseRedirect(reverse(index))
@@ -137,10 +141,16 @@ def register(request):
 def rab_shop_left_sidebar_grid(request):
     data=Product.objects.all()
     w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+    c_data=cart.objects.filter(c_id_id=request.session['cid'])
     request.session['wishlist_length']=len(w_data)
+    request.session['cart_length']=len(c_data)
     return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data})
 
-
+def filter(request):
+    min_price=request.POST["min_price"]
+    max_price=request.POST["max_price"]
+    data=Product.objects.filter(price__range=(min_price,max_price))
+    return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data})
 
 def classic(request):
     return render(request,"shop/classic.html")
@@ -158,7 +168,9 @@ def view_cart(request):
         total_price=my_total+30
         print("------------------>total_price",my_total)
         w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+        c_data=cart.objects.filter(c_id_id=request.session['cid'])
         request.session['wishlist_length']=len(w_data)
+        request.session['cart_length']=len(c_data)
         return render(request,"shop/11-rab-shop-cart.html",{'c_data':c_data,'my_total':my_total,'total_price':total_price})
 
 
@@ -194,8 +206,10 @@ def add_cart(request,pk):
                 print("------------------------------->",my_total)
                 c_data=cart.objects.filter(c_id_id=request.session['cid'])
                 w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+                c_data=cart.objects.filter(c_id_id=request.session['cid'])
                 request.session['wishlist_length']=len(w_data)
-                return render(request,"shop/11-rab-shop-cart.html",{'c_data':c_data,'my_total':my_total,'total_price':total_price})
+                request.session['cart_length']=len(c_data)
+                return HttpResponseRedirect(reverse(view_cart))
             else:
                 cart_insert=cart.objects.create(product_id=p_id,qty=1,c_id_id=request.session['cid'])
                 total=0
@@ -208,8 +222,10 @@ def add_cart(request,pk):
                 #cid.save()
                 c_data=cart.objects.filter(c_id_id=request.session['cid'])
                 w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+                c_data=cart.objects.filter(c_id_id=request.session['cid'])
                 request.session['wishlist_length']=len(w_data)
-                return render(request,"shop/11-rab-shop-cart.html",{'c_data':c_data,'my_total':my_total,'total_price':total_price})
+                request.session['cart_length']=len(c_data)
+                return HttpResponseRedirect(reverse(view_cart))
 
     except:
         return HttpResponseRedirect(reverse(wishlist))
@@ -220,7 +236,9 @@ def wishlist(request):
         return HttpResponseRedirect(reverse(index))
     else:
         w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+        c_data=cart.objects.filter(c_id_id=request.session['cid'])
         request.session['wishlist_length']=len(w_data)
+        request.session['cart_length']=len(c_data)
         return render(request,"shop/wishlist.html",{'w_data':w_data})
 
 
@@ -241,8 +259,9 @@ def remove_item(request,pk):
     print("-------------------->",pk)
     wid=wishlist_tbl.objects.get(id=pk,c_id_id=request.session['cid'])
     wid.delete()
-    w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
-    return render(request,"shop/wishlist.html",{'w_data':w_data})
+    #w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+    #return render(request,"shop/wishlist.html",{'w_data':w_data})
+    return HttpResponseRedirect(reverse(wishlist))
 
 def remove_item_and_add(request,pk):
     try:
@@ -272,7 +291,7 @@ def remove_item_and_add(request,pk):
                 total_price=my_total+30
             c_data=cart.objects.filter(c_id_id=request.session['cid'])
         wid.delete()
-        return render(request,"shop/11-rab-shop-cart.html",{'c_data':c_data,'my_total':my_total,'total_price':total_price})
+        return HttpResponseRedirect(reverse(view_cart))
     except:
         return HttpResponseRedirect(reverse(wishlist))
 
@@ -281,7 +300,7 @@ def remove_item_cart(request,pk):
     cid=cart.objects.get(id=pk,c_id_id=request.session['cid'])
     cid.delete()
     c_data=cart.objects.filter(c_id_id=request.session['cid'])
-    return render(request,"shop/11-rab-shop-cart.html",{'c_data':c_data})
+    return HttpResponseRedirect(reverse(view_cart))
 
 
 def incrment_product(request,pk):
@@ -366,4 +385,12 @@ def order_complete(request):
         for i in c_id:
             order_item.objects.create(order=order_view,product_id_id=i.product_id_id,qty=i.qty,price=i.product_id.price)
         c_id.delete()
+        c_data=cart.objects.filter(c_id_id=request.session['cid'])
+        request.session['cart_length']=len(c_data)
         return render(request,"shop/order_complete.html")
+def order_complete_view(request):
+    if "email" not in request.session:
+        return HttpResponseRedirect(reverse(index))
+    c_data=cart.objects.filter(c_id_id=request.session['cid'])
+    request.session['cart_length']=len(c_data)
+    return render(request,"shop/order_complete.html")

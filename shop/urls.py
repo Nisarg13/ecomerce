@@ -20,6 +20,7 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('rab_shop_left_sidebar_grid/', views.rab_shop_left_sidebar_grid, name='rab_shop_left_sidebar_grid'),
+    path('filter/', views.filter, name='filter'),
     path('classic/', views.classic, name='classic'),
     path('view-cart/', views.view_cart, name='view-cart'),
     path('add-cart/<int:pk>', views.add_cart, name='add-cart'),
@@ -37,4 +38,5 @@ urlpatterns = [
     path('decrment-product/<int:pk>', views.decrment_product, name='decrment-product'),
     path('checkout-view/', views.checkout_view, name='checkout-view'),
     path('order-complete/', views.order_complete, name='order-complete'),
+    path('order-complete-view/', views.order_complete_view, name='order-complete-view'),
 ]
