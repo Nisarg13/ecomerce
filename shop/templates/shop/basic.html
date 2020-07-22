@@ -55,7 +55,7 @@
         <div class="container">
             <div class="row top">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{%url 'login'%}">
                         <img src="{% static 'shop\assets\images\logo.png'%}" alt="Logo">
                     </a>
                     <!--logo-->
@@ -70,7 +70,7 @@
 
                         <ul class="site-header-cart menu on-hover">
                             <li>
-                                <a href="#" title="">
+                                <a href="{%url 'wishlist'%}" title="">
                                     <span class="count rounded-crcl">{{request.session.wishlist_length}}</span>
                                     <i class="pe-7s-like icon"></i>
                                 </a>
