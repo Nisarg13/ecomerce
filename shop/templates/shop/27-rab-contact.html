@@ -1,0 +1,998 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    
+    <title>RAB Fashion</title>
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets\images\fav.jpg">
+    <link rel="shortcut icon" type="image/png" href="assets\images\fav.jpg">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i%7CMr+Dafoe%7CPoppins:300,400,500,600,700" rel="stylesheet">  
+
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="assets\css\bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\animate.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\font-awesome-animation.min.css"> 
+    <link rel="stylesheet" type="text/css" href="assets\css\jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\jquery.bxslider.css"> 
+    <link rel="stylesheet" type="text/css" href="assets\css\pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\font.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\colorbox.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\menu.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\responsive.css">
+
+    <!-- color skin -->
+    <link rel="stylesheet" type="text/css" href="assets\css\color-skin\default.css">
+
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <header class="header-2">
+        <div class="container">
+            <div class="row top">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets\images\logo.png" alt="Logo">
+                    </a>
+                    <!--logo-->
+
+                    <div class="header-right">
+                        <form class="searchbox navbar-form">
+                            <input type="search" placeholder="Search..." name="search" class="searchbox-input" onkeyup="buttonUp();" required="">
+                            <input type="submit" class="searchbox-submit" value="">
+                            <span class="searchbox-icon"><i class="pe-7s-search"></i></span>
+                        </form>
+                        <!--form-->
+
+                        <ul class="site-header-cart menu on-hover">
+                            <li>
+                                <a href="#" title="">
+                                    <span class="count rounded-crcl">1</span>
+                                    <i class="pe-7s-like icon"></i>
+                                </a>
+
+                                <div class="dropdown-menu widget woocommerce widget_shopping_cart">
+                                    <div class="widget_shopping_cart_content">
+                                        <h6 class="title">Your Wishlist (4 Items)</h6>
+                                        <ul class="cart_list product_list_widget ">
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                            </ul>
+                                                            <a href="#" class="btn btn-default btn-bg text-uppercase">add to cart</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                            </ul>
+                                                            <a href="#" class="btn btn-default btn-bg text-uppercase">add to cart</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                            </ul>
+                                                            <a href="#" class="btn btn-default btn-bg text-uppercase">add to cart</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                            </ul>
+
+                                                            <a href="#" class="btn btn-default btn-bg text-uppercase">add to cart</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+                                        </ul>
+                                        <!-- end product list -->
+
+                                        <div class="buttons">
+                                            <a href="#" class="button">view cart</a>
+                                            <a href="#" class="button checkout">checkout</a>
+                                        </div>
+                                        <!--buttons-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--wish list-->
+
+                            <li>
+                                <a href="#" title="">
+                                    <span class="count rounded-crcl">1</span>
+                                    <i class="pe-7s-shopbag icon"></i>
+                                </a>
+
+                                <div class="dropdown-menu widget woocommerce widget_shopping_cart">
+                                    <div class="widget_shopping_cart_content">
+                                        <h6 class="title">Your Shopping Cart (4 Items)</h6>
+                                        <ul class="cart_list product_list_widget ">
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                                <li>Qty : 2 </li>
+                                                                <li>Size : XL</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                                <li>Qty : 2 </li>
+                                                                <li>Size : XL</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                                <li>Qty : 2 </li>
+                                                                <li>Size : XL</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+
+                                            <li class="mini_cart_item">
+                                                <table>
+                                                    <tr>
+                                                        <td class="figure">
+                                                            <figure>
+                                                                <img src="assets\images\cart-widget-product.jpg" alt="">
+                                                            </figure>
+                                                        </td>
+
+                                                        <td class="content">
+                                                            <a href="#" class="remove" title="Remove this item">
+                                                                <i class="fa fa-close"></i>
+                                                            </a>
+
+                                                            <h6 class="product-title">
+                                                               Ladies black formal jacket
+                                                           </h6>
+
+                                                            <ul class="product-info m-0">
+                                                                <li>Price : $189.00</li>
+                                                                <li>Qty : 2 </li>
+                                                                <li>Size : XL</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <!--single item-->
+                                        </ul>
+                                        <!-- end product list -->
+
+                                        <div class="buttons">
+                                            <a href="#" class="button">view cart</a>
+                                            <a href="#" class="button checkout">checkout</a>
+                                        </div>
+                                        <!--buttons-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--cart-->
+                        </ul>
+                        
+                        <ul class="login">
+                            <li>
+                              <a href="#" class="btn-login trigger-modal" data-show="#login"><i class="pe-7s-users"></i><span>Login</span></a>
+                            </li>
+                            
+                            <li class="register">
+                              <a href="#" data-show="#register" class="btn-signup trigger-modal"><i class="fa fa-edit"></i><span>register</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--right-->
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--button-->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="container">
+                    <ul class="nav navbar-nav">
+                        <li class="current-menu-item dropdown">
+                            <a href="#" class="dropdown-toggle">Home</a>
+                            <ul class="sub-menu dropdown-menu">
+                                <li><a href="index.html">Fashion v1</a></li>
+                                <li><a href="31-rab-fashion-v2.html">Fashion v2</a></li>
+                                <li><a href="32-rab-fashion-v3.html">Fashion v3</a></li>
+                                <li><a href="02-rab-shoes.html">Shoes </a></li>
+                                <li><a href="03-rab-bags.html">Bags </a></li>
+                                <li><a href="33-rab-cosmetics.html">Cosmetics</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="mega-link dropdown">
+                          <a href="#" class="dropdown-toggle">Women’s </a>
+                            <div class="mega-menu dropdown-menu">
+                               <div class="mega-wrap row">
+                                   <div class="col-sm-3">
+                                       <h6>Clothing</h6>
+                                       <ul>
+                                           <li><a href="#">Shirts, Tops &amp; Tees</a></li>
+                                           <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
+                                           <li><a href="#">Jackets &amp; Sweaters</a></li>
+                                           <li><a href="#">Jeans, Pants &amp; Leggings</a></li>
+                                           <li><a href="#">Dresses &amp; Skirts</a></li>
+                                           <li><a href="#">Suits &amp; Blazers</a></li>
+                                           <li><a href="#">Sportswear</a></li>
+                                           <li><a href="#">Other Women's Clothing</a></li>
+                                       </ul>
+                                   </div>
+                                   <!--clothing-->
+
+                                   <div class="col-sm-3">
+                                       <h6>Handbags</h6>
+                                       <ul>
+                                           <li><a href="#">Backpacks</a></li>
+                                           <li><a href="#">Cross-Body Bags</a></li>
+                                           <li><a href="#">Shoulder Bags</a></li>
+                                           <li><a href="#">Top-Handle Bags</a></li>
+                                           <li><a href="#">Wallets</a></li> 
+                                           <li><a href="#">Tote &amp; Clutches</a></li> 
+                                           <li><a href="#">Duffels, Luggage &amp; Suitcase</a></li> 
+                                           <li><a href="#">Wristlets</a></li> 
+                                       </ul>
+
+                                       <h6> Sunglasses & Eyewear </h6>
+                                        <ul>
+                                           <li><a href="#">Women's Sunglasses</a></li>
+                                           <li><a href="#">Women's Spectacle & Medical Frames </a></li> 
+                                       </ul>
+                                   </div>
+                                   <!--Accessories-->
+
+                                   <div class="col-sm-3">
+                                       <h6>Footwear</h6>
+                                       <ul>
+                                           <li><a href="#">Boots &amp; Sandals</a></li>
+                                           <li><a href="#">Sports Shoes</a></li>
+                                           <li><a href="#">Pumps &amp; Heels</a></li>
+                                           <li><a href="#">Flats, Flip Flops &amp; Slippers</a></li>
+                                           <li><a href="#">Loafers &amp; Slip-ons</a></li> 
+                                       </ul>
+
+                                       <h6>Accessories</h6>
+                                       <ul>
+                                           <li><a href="#">Rings</a></li>
+                                           <li><a href="#">Earrings</a></li>
+                                           <li><a href="#">Necklaces &amp; Pendants</a></li>
+                                           <li><a href="#">Bracelets &amp; Bangles</a></li>
+                                           <li><a href="#">Jewelry Sets</a></li> 
+                                       </ul>
+                                   </div>
+                                   <!--clothing--> 
+
+                                   <div class="col-sm-3">
+                                      <figure>
+                                          <a href="#"><img src="assets\images\sidebar-banner.jpg" alt=""></a>
+                                      </figure>  
+                                   </div>
+                                   <!--clothing-->
+                               </div> 
+                            </div>
+                        </li>
+
+                        <li class="mega-link dropdown">
+                            <a href="#" class="dropdown-toggle">Men’s </a>
+                            <div class="mega-menu dropdown-menu">
+                               <div class="mega-wrap row">
+                                   <div class="col-sm-3">
+                                       <h6>Clothing</h6>
+                                       <ul>
+                                           <li><a href="#">Jeans, Pants &amp; Trousers</a></li>
+                                           <li><a href="#">Shirts, Tops &amp; Tees</a></li>
+                                           <li><a href="#">Jackets &amp; Sweaters</a></li>
+                                           <li><a href="#">Jeans, Pants &amp; Leggings</a></li> 
+                                           <li><a href="#">Suits &amp; Blazers</a></li>
+                                           <li><a href="#">Sportswear</a></li>
+                                           <li><a href="#">Innerwear &amp; Sleepwear</a></li>
+                                           <li><a href="#">Other Mens's Clothing</a></li>
+                                       </ul>
+                                   </div>
+                                   <!--clothing-->
+
+                                   <div class="col-sm-3">
+                                       <h6>Accessories</h6>
+                                       <ul>
+                                           <li><a href="#">Backpacks</a></li>
+                                           <li><a href="#">Laptop Bags</a></li>
+                                           <li><a href="#">Duffles, Luggage &amp; Suitcase</a></li>
+                                           <li><a href="#">Wallets</a></li>
+                                           <li><a href="#">Men's Jewelry</a></li> 
+                                       </ul>
+
+                                       <h6> Watches </h6>
+                                        <ul>
+                                           <li><a href="#">Wrist Watches</a></li>
+                                           <li><a href="#">Watch Sets</a></li> 
+                                           <li><a href="#">Other  Men's Watches</a></li> 
+                                           <li><a href="#">Watch Sets</a></li> 
+                                       </ul>
+                                   </div>
+                                   <!--Accessories-->
+
+                                   <div class="col-sm-3">
+                                       <h6> Sunglasses &amp; Eyewear </h6>
+                                        <ul>
+                                           <li><a href="#">Sunglasses</a></li>
+                                           <li><a href="#">Spectacle &amp; Medical Frames</a></li> 
+                                       </ul>
+
+                                       <h6>Footwear</h6>
+                                       <ul>
+                                           <li><a href="#">Boots, Shoes &amp; Sandals</a></li>
+                                           <li><a href="#">Fashion Sneakers</a></li>
+                                           <li><a href="#">Flats, Flip-Flops &amp; Slippers</a></li> 
+                                       </ul>
+                                   </div>
+                                   <!--clothing--> 
+
+                                   <div class="col-sm-3">
+                                      <figure>
+                                          <a href="#"><img src="assets\images\sidebar-banner.jpg" alt=""></a>
+                                      </figure>  
+                                   </div>
+                                   <!--clothing-->
+                               </div> 
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Shop</a>
+                            <ul class="sub-menu dropdown-menu">
+                                <li><a href="04-rab-fullwidth-shop-grid.html">Shop full width</a></li>
+                                <li><a href="05-rab-shop-left-sidebar-grid.html">Shop grid left sidebar</a></li>
+                                <li><a href="06-rab-shop-right-sidebar-grid.html">Shop grid  right sidebar</a></li>
+                                <li><a href="07-rab-shop-left-sidebar-list.html">Shop list  left sidebar</a></li>
+                                <li><a href="08-rab-shop-right-sidebar-list.html">Shop list  right sidebar</a></li>
+                                <li><a href="09-rab-shop-product-single.html">Shop product single</a></li>
+                                <li> <a href="10-rab-shop-product-single-grouped.html">Shop product single grouped</a></li>
+                                <li><a href="11-rab-shop-cart.html">Cart</a></li>
+                                <li><a href="15-rab-shop-wishlist.html">Wishlist</a></li>
+                                <li><a href="12-rab-shop-checkout.html">Checkout</a></li>
+                                <li><a href="13-rab-shop-order-complete.html">Order Complete</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Pages</a>
+                            <ul class="sub-menu dropdown-menu">
+                                <li><a href="26-rab-about.html">About us</a></li>
+                                <li><a href="27-rab-contact.html">Contact us</a></li>
+                                <li><a href="28-rab-support.html">Support</a></li>   
+                            </ul>
+                        </li> 
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Blog</a>
+                            <ul class="sub-menu dropdown-menu"> 
+                                <li><a href="22-rab-blog-classic.html">Blog classic</a></li>
+                                <li><a href="23-rab-blog-masonarry.html">Blog masonarry</a></li>
+                                <li><a href="24-rab-blog-modern.html">Blog mordern</a></li>
+                                <li><a href="25-rab-blog-single.html">Blog single</a></li>
+                            </ul>
+                        </li> 
+                    </ul>
+                </div>
+                <!--container-->                
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </header>
+    <!--header-->
+
+    <div class="main-banner inner-banner banner-scroll">
+        <div class="fixed-banner banner-contact">
+            <div class="banner-content">
+                <div class="content-wrap mb-0 banner-overlay">
+                    <div class="inner">
+                        <h2>contact us</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Contact us</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--content wrap-->
+            </div>
+            <!--banner content-->
+        </div>
+    </div>
+    <!--main banner-->
+
+    <main class="main primary-padding"> 
+        <div class="container contact-page">
+            <div class="row top mb-90">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="box text-center">                        
+                        <h4 class="contact-title">
+                            <i class="pe-7s-map-marker"></i>
+                            Address
+                        </h4>
+
+                        <p>
+                            Local street address here,
+                            State, Zip code, Country
+                        </p>
+                    </div>
+                </div>
+                <!--address-->
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="box text-center">                        
+                        <h4 class="contact-title">
+                            <i class="pe-7s-call"></i>
+                            Phone & Email
+                        </h4>
+
+                        <p>
+                            1-098-3456-7890
+                            <span><a href="#">info@yourdomain.com</a></span>
+                        </p>
+                    </div>
+                </div>
+                <!--phone-->
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="box text-center">                        
+                        <h4 class="contact-title">
+                            <i class="pe-7s-share"></i>
+                            Address
+                        </h4> 
+
+                        <ul class="social-icons">
+                            <li> <a href="#"><i class="fa fa-facebook"></i></a> </li>
+                            <li> <a href="#"><i class="fa fa-twitter"></i></a> </li>
+                            <li> <a href="#"><i class="fa fa-linkedin"></i></a> </li>
+                            <li> <a href="#"><i class="fa fa-instagram "></i></a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--social-->
+            </div>
+            <!--top-->
+
+            <div class="row mb-60">
+                <div class="col-md-10 col-sm-10 col-sm-offset-1 col-xs-12">
+                    <hr>
+                </div>
+            </div>
+            <!--line seperator-->
+
+            <div class="row form-wrap mb-50">
+                <div class="col-md-12 col-sm-12 col-xs-12 mb-25">
+                    <h4 class="contact-title text-center">
+                        <i class="pe-7s-mail"></i>
+                        Send us a email
+                    </h4> 
+                </div>
+                <!--title-->
+                
+                <div class="col-md-10 col-sm-10 col-sm-offset-1 col-xs-12">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>First Name <span>*</span></label>
+                                    <input type="text" placeholder="Your First Name">
+                                </div>
+                                <!--name-->  
+
+                                <div class="form-group">
+                                    <label>Last Name <span>*</span></label>
+                                    <input type="text" placeholder="Your Last Name">
+                                </div>
+                                <!--name--> 
+
+                                <div class="form-group">
+                                    <label>Email <span>*</span></label>
+                                    <input type="text" placeholder="Your Last Name">
+                                </div>
+                                <!--name-->  
+                            </div>
+                            <!--left-->
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea placeholder="Your Message"></textarea>
+                                </div>
+                            </div>
+                            <!--right-->
+
+                            <div class="form-group col-sm-12 mb-0">
+                                <button type="submit">
+                                    send message
+                                </button>
+                            </div>
+                            <!--button-->
+                        </div>
+                    </form>
+                </div>                
+            </div>
+            <!--form wrap-->
+
+            <div class="row map-wrap">
+                <div class="col-md-10 col-sm-10 col-sm-offset-1 col-xs-12">
+                    <div class="map-wrap overlay">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13027.97135015198!2d149.1204445793029!3d-35.28130433462935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164d69b05c9021%3A0x500ea6ea7695660!2sCanberra+ACT+2601!5e0!3m2!1sen!2sau!4v1486457460600" width="600" height="580" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+            <!--map wrap-->
+        </div>
+    </main>
+    <!--main--> 
+
+    <div class="modal fade login" id="modal-login" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <h2 class="pull-left text-uppercase">My Account</h2>
+
+            <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            
+            <div id="login" class="hidden">
+              <div class="content text-center">
+                  <div class="top mb-35">
+                      <h4 class="contact-title">
+                              <i class="pe-7s-users primary-color"></i>
+                              Login Account
+                          </h4>
+                      <p>Enter your username and password to login.</p>
+                  </div>
+                  <!--top-->
+
+                  <form action="#">
+                      <div class="row">
+                          <div class="form-group col-sm-12">
+                              <label>Username / Email <span>*</span></label>
+                              <input type="text" placeholder="Your username / Email">
+                          </div>
+                          <!--user name-->
+
+                          <div class="form-group col-sm-12">
+                              <label>Password <span>*</span></label>
+                              <input type="password">
+                          </div>
+                          <!--password-->
+
+                          <div class="form-group col-sm-6 pull-left">
+                              <div class="checkbox-wrap">
+                                  <input type="checkbox" value="1">
+                                  <label>Remember Me</label>
+                              </div>
+                          </div>
+                          <!--checkbox-->
+
+                          <div class="form-group col-sm-6 pull-right">
+                              <a href="#" data-show="#forgot-pass" class="primary-color pull-right btn-password trigger-modal">Lost Password?  </a>
+                          </div>
+                          <!--password-->
+
+                          <div class="form-group col-sm-12">
+                              <button type="submit">Login</button>
+                          </div>
+                          <!--button-->
+                      </div>
+                  </form>
+
+                  <div class="or mb-15">OR</div>
+
+                  <div class="row">
+                      <ul class="login-social col-sm-12">
+                          <li>
+                              <a href="#" class="fb">
+                                  <i class="fa fa-facebook"></i> FACEBOOK
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#" class="twt">
+                                  <i class="fa fa-twitter"></i> TWITTER
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+
+                  Don’t have an account yet?
+                  <a href="#" class="trigger-modal primary-color btn-signup" data-show="#register"> <strong>Signup Now!</strong></a>
+              </div>
+            </div>
+            <!-- login -->
+
+            <div id="register" class="hidden">
+              <div class="content text-center sign-up-block">
+                <div class="top mb-35">
+                    <h4 class="contact-title">
+                        <i class="pe-7s-add-user primary-color"></i>
+                        Signup Account
+                    </h4>
+                    <p>Fill up the form below to signup an account.</p>
+                </div>
+                <!--top-->
+
+                <form action="#">
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label>Email <span>*</span></label>
+                            <input type="text" placeholder="Your username / Email">
+                        </div>
+                        <!--user name-->
+
+                        <div class="form-group col-sm-12">
+                            <label>Password <span>*</span></label>
+                            <input type="password">
+                        </div>
+                        <!--password-->
+
+                        <div class="form-group col-sm-12">
+                            <label>Verify Password <span>*</span></label>
+                            <input type="password">
+                        </div>
+                        <!--password-->
+
+                        <div class="form-group col-sm-12">
+                            <button type="submit">signup</button>
+                        </div>
+                        <!--button-->
+                    </div>
+                </form>
+
+                <div class="or mb-15">OR</div>
+
+                <div class="row">
+                    <ul class="login-social col-sm-12">
+                        <li>
+                            <a href="#" class="fb">
+                                <i class="fa fa-facebook"></i> FACEBOOK
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twt">
+                                <i class="fa fa-twitter"></i> TWITTER
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                Have an account?
+                <a href="#" class="primary-color btn-login trigger-modal" data-show="#login"> <strong>Login Now!</strong></a>
+              </div>
+            </div>
+            <!-- register -->
+
+            <div id="forgot-pass" class="hidden">
+              <div class="content text-center forget-password-block">
+                <div class="top mb-35">
+                    <h4 class="contact-title">
+                        <i class="pe-7s-door-lock primary-color"></i>
+                       Lost Password
+                    </h4>
+                    <p>Fill up the form below to Retrieve your password.</p>
+                </div>
+                <!--top-->
+
+                <form action="#">
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label>Email <span>*</span></label>
+                            <input type="text" placeholder="Your username / Email">
+                        </div>
+                        <!--user name-->
+                        <div class="form-group col-sm-12">
+                            <button type="submit">Reset</button>
+                        </div>
+                        <!--button-->
+                    </div>
+                </form> 
+              </div>
+            </div>            
+            <!-- forget password -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- modal login -->  
+
+    <footer>
+        <div class="bg-gray primary-padding top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h6 class="footer-title">Customer Care</h6>
+                        <ul class="footer-link cs-link">
+                            <li><a href="#">Contact Us </a></li>
+                            <li><a href="#">Payment Options </a></li>
+                            <li><a href="#">Ordering </a></li>
+                            <li><a href="#">Shipping & Delivery </a></li>
+                            <li><a href="#">Returns & Exchanges</a></li>
+                        </ul>
+                    </div>
+                    <!--customer care-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h6 class="footer-title">Information</h6>
+                        <ul class="footer-link cs-link">
+                            <li><a href="#">About Us </a></li>
+                            <li><a href="#">Careers </a></li>
+                            <li><a href="#">Affiliates </a></li>
+                            <li><a href="#">Press </a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    <!--information-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h6 class="footer-title">Site Terms</h6>
+                        <ul class="footer-link cs-link">
+                            <li><a href="#">Sitemap </a></li>
+                            <li><a href="#">Terms of Use </a></li>
+                            <li><a href="#">Terms of Sale </a></li>
+                            <li><a href="#">Privacy Policy </a></li>
+                            <li><a href="#">Shop Glossary </a></li>
+                        </ul>
+                    </div>
+                    <!-- Site Terms -->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 signup">
+                        <h6 class="footer-title">Email signup</h6>
+                        <p class="primary-color">
+                            <strong>Get 10% OFF when you signup for our email newsletter!</strong>
+                        </p>
+                        <form action="#" class="form-inline">
+                            <input type="text" placeholder="Email address">
+                            <button type="submit"><i class="pe-7s-mail"></i></button>
+                        </form>
+                        <p class="lh-normal">
+                            <small>By entering your email address, you agree to receive offers, promotions, and other commercial messages RAB Fashion. </small>
+                        </p>
+                    </div>
+                    <!--email signup-->
+                </div>
+            </div>
+        </div>
+        <!--top-->
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 copy-right">
+                        Copyright © 2017 <a href="#" class="primary-color"><strong>RAB Shopping.</strong></a> All rights reserved.
+                    </div>
+                    <!--left-->
+                    <div class="col-md-6 col-sm-6 col-xs-12 txt-r ">
+                        <ul class="social-icons">
+                            <li> <a href="#"><i class="fa fa-facebook"></i></a> </li>
+                            <li> <a href="#"><i class="fa fa-twitter"></i></a> </li>
+                            <li> <a href="#"><i class="fa fa-linkedin"></i></a> </li>
+                            <li> <a href="#"><i class="fa fa-instagram "></i></a> </li>
+                        </ul>
+                    </div>
+                    <!--right-->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer-->
+
+    <!-- back to top-->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
+    
+    <!-- Js libery -->
+    <script src="assets\js\jquery-3.1.1.min.js"></script>
+    <script src="assets\js\bootstrap.min.js"></script>
+    <script src="assets\js\modernizr.js"></script>
+    
+    <!--jquery ui-->
+    <script src="assets\js\jquery-ui.js"></script>
+    <script src="assets\js\jquery-ui-touch-punch.js"></script>
+
+    <!-- masonry -->
+    <script src="assets\js\masonry.pkgd.min.js"></script>
+    
+    <!-- slider js -->
+    <script src="assets\js\jquery.bxslider.min.js"></script>
+    
+    
+    <!--color box-->
+    <script src="assets\js\jquery.colorbox-min.js"></script> 
+    
+    <!-- wow -->
+    <script src="assets\js\wow.min.js"></script>
+
+    <!-- parallax -->
+    <script src="assets\js\parallax.js"></script>
+
+    <!-- jquery.dlmenu -->
+    <script src="assets\js\jquery.dlmenu.js"></script>  
+    
+    <!-- count down -->
+    <script type="text/javascript" src="assets\js\jquery.countdown.min.js"></script>
+    
+    <!--Costom js-->
+    <script src="assets\js\main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+﻿{%extends 'shop/basic.html' %}
+
+{%load static %}
+
+{%block banner%}
+
+    <div class="main-banner inner-banner banner-scroll">
+        <div class="fixed-banner ">
+            <div class="banner-content">
+                <div class="content-wrap mb-0 banner-overlay">
+                    <div class="inner">
+                        <h2>checkout Page</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li class="active">Shopping Cart</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--content wrap-->
+            </div>
+            <!--banner content-->
+        </div>
+    </div>
+    <!--main banner-->
+{%endblock%}
+{%block main%}
+    <main class="main">
+        <section class="checkout-steps">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wrap first active">
+                            <span class="circle rounded-crcl"> 01 </span>
+                            <h6>Shopping Cart</h6>
+                        </div>
+                        <!--steps-->
+                        <div class="wrap second active">
+                            <span class="circle rounded-crcl"> 02 </span>
+                            <h6>Check Out</h6>
+                        </div>
+                        <!--steps-->
+                        <div class="wrap final active full ">
+                            <span class="circle rounded-crcl"> 03 </span>
+                            <h6>Order Complete</h6>
+                        </div>
+                        <!--steps-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--check out steps-->
+
+        <section class="thank-you p-pb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center ">
+                        <figure class="mb-45">
+                            <img src="{% static 'shop\assets\images\thank-you-icon.jpg'%}" alt="">
+                        </figure>
+
+                        <h4 class="mb-70">Thank you for shopping with us, your order is complete!</h4>
+
+                        <a href="index.html" class="btn btn-default btn-bg text-uppercase">homepage</a>
+                        <a href="index.html" class="btn btn-default btn-bg text-uppercase">continue shopping</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--cart block-->
+    </main>
+    <!--main-->
+{%endblock%}
+
+ 

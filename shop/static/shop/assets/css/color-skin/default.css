@@ -1,0 +1,232 @@
+/*-------- primary color -----------*/
+
+a:hover,
+.navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav li.current-menu-item a,
+.header-2 .navbar-default .navbar-nav>li>a:hover,
+.header-2 .navbar-default .navbar-nav li.current-menu-item a,
+header .navbar-form button[type="submit"]:hover,
+header ul.login li a:hover,
+.primary-color,
+.footer-link li a:hover,
+.products.product-slide .product h6 a:hover,
+.price ins,
+.history-block h4 a,
+.history-block h4 a:hover i,
+.entry-title a:hover,
+.blog-list:hover .entry-title a,
+.bx-wrapper .bx-pager.bx-default-pager a.active:before,
+.main-banner h6,
+.bags-cat .last .btn.btn-default,
+.absolute-text .text-wrap h2,
+.breadcrumb li a, 
+.woocommerce-breadcrumb a,
+.single-product div.product form.cart .button-wish,
+.single-product div.product .product_meta a,
+.quantity.grouped td.product-price,
+table.cart a:hover,
+table.cart td.product-remove a.remove:hover,
+.widget.widget_recent_entries ul li a:hover,
+a.more,
+.feature-post-list h2 a,
+.feature-post-list a.more:hover,
+.modern-list .title a.more:hover,
+.modern-list:hover .title h4 a,
+.promo-banner .btn.btn-default:hover,
+.products .product h6 a:hover,
+ul.products li.product:hover h6 a,
+blockquote,
+.support .support-tab>li.active>a,
+.support .support-tab>li>a:hover,
+.modal.login button.close:hover,
+.founder span,
+h4 a:hover,
+.mega-menu .mega-wrap li a:hover,
+.promo-banner .wrap:hover .btn.btn-default,
+.contact-title:hover i,
+header ul.menu li a:hover i,
+.searchbox-icon:hover,
+.cat-wrap:hover a,
+.navbar-default ul.nav.navbar-nav.text-white li a:hover,
+.promo-offer .title,
+ .cat-parallax.cat-parallax2 a.btn:hover,
+ .full-pg-menu li a:hover,
+ .trending-wrap:hover h4 {
+    color: #e56d8e;
+}
+
+
+/*-------- primary background -----------*/
+
+.navbar-nav li.current-menu-item a:after,
+.navbar-nav>li>a:hover:after,
+header ul.menu .count,
+footer .signup form button[type="submit"],
+ul.social-icons li a:hover,
+.feature-cat .btn:hover,
+.feature-cat .wrap:hover .btn,
+.btn-default:hover,
+.btn-default.active,
+.btn.btn-default.active:hover,
+.title-main h2:after,
+.title-main h4:after,
+.insta-feed .bx-wrapper .bx-controls-direction a:hover,
+.primary-bg,
+.btn-default.primary-bg,
+.sec-title:after,
+.widget-title:after,
+ul.products.list-view li.product .icons .btn:hover,
+.btn-default.filter-btn:hover,
+.btn.btn-default.btn-cart:hover,
+.custom-radio.size-option input[type="radio"]:checked + span,
+.single-product div.product form.cart .button,
+.quantity-wrap span:hover,
+.checkout-steps .active .circle,
+.checkout-steps .active.wrap:before,
+.checkout-steps .active.wrap:after,
+.checkout-steps .half.wrap:before,
+.checkout-steps .full.wrap:before,
+.checkout-steps .full.wrap:after,
+table.cart td .coupon input[type="submit"]:hover,
+.checkout-button,
+form.checkout .button,
+.modal button.close,
+.widget_shopping_cart .buttons .button.checkout,
+.newsletter .btn-subscribe,
+.style2 .newsletter:before, 
+.box.primary-border:hover,
+ul.products li.product .icons a:hover,
+.storefront-sorting .short-by .btn.btn-default:hover,
+.storefront-sorting .short-by .btn.btn-default.active,
+.widget_shopping_cart table td.content .btn.btn-default:hover,
+.comment-respond button[type="submit"]:hover,
+.contact-page button[type="submit"]:hover,
+.support-box.primary-border:hover,
+.support .support-tab>li>a:after,
+.modal.login button[type="submit"]:hover,
+.scrollup:hover,
+.navbar-default .navbar-toggle:hover .icon-bar,
+.cat-wrap:hover .title.rt-aln:before, 
+.cat-wrap:hover .title.lt-aln:before, 
+.cat-wrap:hover .title.vert:before,
+.promo-offer .btn.btn-default:hover{
+    background-color: #e56d8e;
+}
+
+
+/*-------- primary border -----------*/
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.primary-border,
+.box.primary-border,
+.bags-cat .last .btn.btn-default,
+.storefront-sorting .short-by .btn.btn-default.active,
+.step-table .circle,
+.checkout-steps .circle, 
+.modern-list .title a.more,
+.custom-radio.size-option input[type="radio"]:checked + span,
+ul.products li.product .icons a:hover,
+.modal.login button.close:hover,
+.cat-parallax .title {
+    border-color: #e56d8e;
+}
+
+
+/*-------- secondary color -----------*/
+
+.star-rating,
+.promo-parallax h4,
+.secondary-color,
+.ab-text a,
+.blog-list .post-info,
+.blog-list .post-info a,
+.blog-single .post-info,
+.blog-single .post-info a, 
+.blog-single .btn-wrap .btn:hover,
+.tags-wrap a,
+.footer a.primary-color:hover {
+    color: #ffa167;
+}
+
+
+/*-------- secondary border -----------*/
+
+.sedondary-border, 
+.box.secondary-border,
+.support-box.secondary-border,
+.pagination .page-numbers li .page-numbers:hover,
+.woocommerce-pagination .page-numbers li .page-numbers:hover,
+.pagination .page-numbers li .page-numbers.current,
+.woocommerce-pagination .page-numbers li .page-numbers.current,
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover,
+.pagination li a:hover {
+    border-color: #ffa167;
+}
+
+
+/*-------- secondary bg -----------*/
+
+.sec-bg,
+.secondary-bg,
+.newsletter .btn-subscribe.sec-bg,
+.pagination .page-numbers li .page-numbers:hover,
+.woocommerce-pagination .page-numbers li .page-numbers:hover,
+.pagination .page-numbers li .page-numbers.current,
+.woocommerce-pagination .page-numbers li .page-numbers.current,
+.ui-slider .ui-slider-range,
+.ui-slider .ui-slider-handle,
+.woocommerce-tabs ul.tabs li a:hover,
+.woocommerce-tabs ul.tabs li.active a,
+.widget_shopping_cart .buttons .button,
+.canvas button.close,
+.box.style2 .newsletter .btn-subscribe,
+.box.secondary-border:hover,
+blockquote:after, 
+.support-box.secondary-border:hover,
+.story .content-wrap:after,
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover,
+.pagination li a:hover,
+.home-banner-3 .up-to:before,
+.home-banner-3 .up-to:after,
+.scrollup {
+    background-color: #ffa167;
+}
+
+
+/*-------- tertiary color -----------*/
+
+.tertiary-color {
+    color: #86d271;
+}
+
+
+/*-------- tertiary border -----------*/
+
+.tertiary-border,
+.box.tertiary-border,
+.promo-offer .wrap {
+    border-color: #86d271;
+}
+
+
+/*-------- tertiary bg -----------*/
+
+.tertiary-bg,
+.box.tertiary-border:hover,
+.cat-parallax2 .parallax-wrap .wrap,
+.cat-parallax2 .title span {
+    background-color: #86d271;
+}

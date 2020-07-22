@@ -1,0 +1,169 @@
+﻿{%extends 'shop/basic.html' %}
+
+{%load static %}
+{%block banner %}
+    <div class="main-banner inner-banner banner-scroll">
+        <div class="fixed-banner ">
+            <div class="banner-content">
+                <div class="content-wrap mb-0 banner-overlay">
+                    <div class="inner">
+                        <h2>checkout Page</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li class="active">Shopping Cart</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--content wrap-->
+            </div>
+            <!--banner content-->
+        </div>
+    </div>
+    <!--main banner-->
+{% endblock %}
+{%block main%}
+    <main class="main">
+        <section class="checkout-steps">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12"> 
+                        <div class="wrap first active">
+                            <span class="circle rounded-crcl"> 01 </span>
+                            <h6>Shopping Cart</h6>
+                        </div>
+                        <!--steps-->
+
+                        <div class="wrap second half">
+                            <span class="circle rounded-crcl"> 02 </span>
+                            <h6>Check Out</h6>
+                        </div>
+                        <!--steps-->
+
+                        <div class="wrap final">
+                            <span class="circle rounded-crcl"> 03 </span>
+                            <h6>Order Complete</h6>
+                        </div>
+                        <!--steps-->
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <!--check out steps-->
+
+        <section class="cart-block p-pb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="woocommerce">
+                            <form action="#">
+                                <table class="shop_table shop_table_responsive cart">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">Product Detail</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                            <th class="product-remove"> </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {%for i in c_data%}
+                                        <tr class="cart_item">
+                                            <td class="product-name" data-title="Product">
+                                                <a href="#" class="cart-product">
+                                                    <img src="{{i.product_id.image.url}}" alt="Product image">
+                                                </a>
+
+                                                <div class="product-info">
+                                                    <h6> {{i.product_id.produt_name}} </h6>
+                                                    <ul class="product-info">
+                                                        <li>Category: {{i.product_id.category}} </li>
+                                                    </ul>
+                                                </div>
+                                                <!--product info-->
+                                            </td>
+                                            <td class="product-price" data-title="Price">
+                                                {{i.price}} Rs
+                                            </td>
+                                            <td class="product-quantity" data-title="Quantity">
+                                               <div class="quantity-wrap">
+                                                <a href="{%url 'decrment-product' pk=i.id%}">  <span class="minus"> - </span></a>
+                                                    <input type="number" value="{{i.qty}}" title="Qty" class="input-text qty" size="4">
+    
+                                                 <a href="{%url 'incrment-product' pk=i.id%}">  <span class="add"> + </span></a>
+                                                
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal" data-title="Total">
+                                                {{i.price}}
+                                            </td>
+                                            <td class="product-remove" data-title="Remove">
+                                                <a href="{% url 'remove-item-cart' pk=i.id %}" class="remove" title="Remove this item">
+                                                    <i class="fa fa-close"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {%endfor%}
+                                        <tr>
+                                            <td colspan="5" class="actions">
+                                                <div class="coupon">
+                                                    <label for="coupon_code">Coupon:</label>
+                                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon code">
+
+                                                    <input type="submit" class="button" name="apply_coupon" value="Apply Coupon">
+                                                </div>
+                                                <!--cupon-->
+
+                                                <a href="#" class="btn btn-default btn-cart">Continue Shopping </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                            <!--cart form-->
+                           
+                            <div class="cart-collaterals">
+                                <div class="cart_totals">
+                                    <h2>Cart Totals</h2>
+                                    <table class="shop_table shop_table_responsive">
+                                        <tbody>
+                                            <tr class="cart-subtotal">
+                                                <th>Cart Sub-total </th>
+                                                <td data-title="Subtotal">{{my_total}} Rs
+                                                </td>
+                                            </tr>
+
+                                            <tr class="shipping">
+                                                <th> Shipping + Handling  </th>
+                                                <td data-title="Shipping">
+                                                    <span class="shipping text-green">30 Rs</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="order-total">
+                                                <th>grand Total</th>
+                                                <td data-title="Total"> {{total_price}} Rs</td>
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                                    <div class="wc-proceed-to-checkout">
+                                        <a href="{%url 'checkout-view'%}" class="checkout-button button alt wc-forward">Proceed to Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--collaterals-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--cart block-->
+    </main>
+    <!--main-->
+{% endblock %}
+{%block back_to_top%}
+    <!-- back to top-->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
+{%endblock%}

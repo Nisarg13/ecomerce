@@ -1,0 +1,91 @@
+﻿{%extends 'shop/basic.html' %}
+
+{%load static %}
+{%block banner%}
+    <div class="main-banner inner-banner banner-scroll">
+        <div class="fixed-banner ">
+            <div class="banner-content">
+                <div class="content-wrap mb-0 banner-overlay">
+                    <div class="inner">
+                        <h2>wishlist</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li> 
+                            <li class="active">Wishlist</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--content wrap-->
+            </div>
+            <!--banner content-->
+        </div>
+    </div>
+{%endblock%}
+    <!--main banner-->
+{%block main%}
+    <main class="main primary-padding"> 
+        <section class="cart-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="woocommerce">
+                            <form action="#">
+                                <table class="shop_table shop_table_responsive cart wish-list">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">Product Detail</th>
+                                            <th class="product-price">Unit Price</th>
+                                            <th class="product-status">Stock Status</th>
+                                            <th class="product-subtotal"></th>
+                                            <th class="product-remove"> </th>
+                                        </tr>
+                                    </thead>
+                                    {%for i in w_data%}
+                                    <tbody>
+                                        <tr class="cart_item">
+                                            <td class="product-name" data-title="Product">
+                                                <a href="#" class="cart-product">
+                                                    <img src="{{i.product_id.image.url}}" alt="Product thumbnail">
+                                                </a>
+
+                                                <div class="product-info" >
+                                                    <h6>   </h6> 
+                                                </div>
+                                                <!--product info-->
+                                            </td>
+                                            <td class="product-price" data-title="Price">
+                                                {{i.product_id.price}} Rs
+                                            </td>
+                                            <td class="product-status stock-info" data-title="Stock">
+                                                <span>
+                                                    <i class="fa fa-check-square"></i> Instock
+                                                </span> 
+                                            </td>
+
+                                            <td class="product-subtotal" data-title="Shop">
+                                                <a href="{% url 'remove_item_and_add' pk=i.product_id.id %} " class="btn btn-default primary-bg text-uppercase">
+                                                    <i class="pe-7s-cart"></i> Add to cart
+                                                </a>
+                                            </td>
+
+                                            <td class="product-remove" data-title="Remove">
+                                                <a href="{%url 'remove-item' pk=i.id %}" class="remove" title="Remove this item">
+                                                    <i class="fa fa-close"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!--cart item--> 
+
+                                    </tbody>
+                                    {% endfor %}
+                                </table>
+                            </form>
+                            <!--cart form--> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--cart block-->
+    </main>
+{%endblock%}
+    <!--main-->

@@ -1,0 +1,476 @@
+﻿{%extends 'shop/basic.html' %}
+{%load static %}
+{%block banner%}
+    <div class="main-banner inner-banner banner-scroll">
+        <div class="fixed-banner ">
+            <div class="banner-content">
+                <div class="content-wrap mb-0 banner-overlay">
+                    <div class="inner">
+                        <h2>Shop Page</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Shop</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--content wrap-->
+            </div>
+            <!--banner content-->
+        </div>
+    </div>
+    <!--main banner-->
+{%endblock%}
+{%block main%}
+    <main class="main primary-padding">
+        <div class="product-list">
+            <div class="container">
+                <div class="row">                
+
+                    <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
+                        <div class="storefront-sorting">
+                            <form class="woocommerce-ordering" method="get">
+                                <select name="orderby" class="orderby">
+                                    <option value="menu_order" selected="selected">Default sorting</option>
+                                    <option value="popularity">Sort by popularity</option>
+                                    <option value="rating">Sort by average rating</option>
+                                    <option value="date">Sort by newness</option>
+                                    <option value="price">Sort by price: low to high</option>
+                                    <option value="price-desc">Sort by price: high to low</option>
+                                </select> 
+                            </form>
+                            <!--form-->
+
+                            <div class="short-by">
+                                <a href="07-rab-shop-left-sidebar-list.html" class="btn btn-default bdr">
+                                    <i class="fa fa-list-ul"></i>
+                                </a>
+                                <!--list-->
+
+                                <a href="05-rab-shop-left-sidebar-grid.html" class="btn btn-default bdr active">
+                                    <i class="fa fa-th-large"></i>
+                                </a>
+                                <!--list-->
+                            </div>
+                            <!--short by-->
+
+                            <div class="woocommerce-result-count">
+                                Showing 1–20 of 340 results
+                            </div>
+                            <!--result-->
+
+                            <nav class="woocommerce-pagination">
+                                <ul class="page-numbers">
+                                    <li><a class="prev page-numbers" href="#">&lt;</a></li>
+                                    <li><span class="page-numbers current">1</span></li>
+                                    <li><a class="page-numbers" href="#">2</a></li>
+                                    <li><a class="page-numbers" href="#">3</a></li>
+                                    <li><a class="next page-numbers" href="#">&gt;</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--storefront-sorting-->
+
+                        <ul class="products clearfix">
+                            {%for i in data%}
+                            <li class="product last" style=" margin-right: 20px;">
+                               
+                                <figure>
+                                    <div class="icons">
+                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="{% url 'add-wishlist' pk=i.id %}" class="btn"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
+                                        <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
+                                    </div>
+                                    <!--icons-->
+                                    
+                                    <div class="product-wrap base-align">
+                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <img src="{{i.image.url}}" alt="Product">
+                                    </div>
+                                </figure>
+                                <!--figure-->
+
+                                <div class="content">
+                                    <h6><a href="#">{{i.produt_name}}</a></h6>
+                                    <div class="bottom">
+                                        <div class="price">
+                                            <del>$189</del>
+                                            <ins>{{i.price}}</ins>
+                                        </div>
+                                        <!--price-->
+
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star-half-empty "></i> 
+                                        </span>
+                                        <!--star-->
+                                    </div>
+                                </div>
+                            </li>
+                            {%endfor%}
+                            <!--single product-->
+                        </ul>
+                        <!--product list-->
+
+                        <nav class="woocommerce-pagination text-center">
+                            <ul class="page-numbers">
+                                <li><a class="prev page-numbers" href="#">&lt;</a></li>
+                                <li><span class="page-numbers current">1</span></li>
+                                <li><a class="page-numbers" href="#">2</a></li>
+                                <li><a class="page-numbers" href="#">3</a></li>
+                                <li><a class="next page-numbers" href="#">&gt;</a></li>
+                            </ul>
+                        </nav>
+                        <!--pegination-->
+                    </div>
+                    <!--left-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 sidebar shop-sidebar left-block">
+                        <div class="box mb-30">
+                            <h5 class="sec-title">Categories</h5>
+                            <ul class="shop-sidebar">
+                                <li>
+                                    <a href="#">Clothes <span class="no">[10]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Shoes <span class="no">[19]</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Accessories <span class="no">[09]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Clothes <span class="no">[19]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Shoes <span class="no">[19]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Accessories <span class="no">[23]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Nasty Gal <span class="no">[87]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Vintage <span class="no">[93]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Sale <span class="no">[10]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Lookbooks <span class="no">[03]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Features <span class="no">[65]</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--category-->
+
+                        <div class="box mb-30">
+                            <h5 class="sec-title">Sizes</h5>
+                            <ul class="shop-sidebar">
+                                <li>
+                                    <a href="#">Xtra-Small <span class="no">[10]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Medium <span class="no">[19]</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Large <span class="no">[09]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Xtra-Large <span class="no">[19]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">XXL <span class="no">[19]</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--size-->
+
+                        <div class="box mb-30">
+                            <h5 class="sec-title">Color</h5>
+                            <ul class="shop-sidebar">
+                                <li>
+                                    <a href="#">Black <span class="no">[10]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Green <span class="no">[19]</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Sky-Blue <span class="no">[09]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Purple <span class="no">[19]</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Navy Blue <span class="no">[19]</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--color-->
+
+                        <section class="mb-4">
+
+                            <h6 class="font-weight-bold mb-3">Price</h6>
+                      
+                            <div class="slider-price d-flex align-items-center my-4">
+                              <span class="font-weight-normal small text-muted mr-2">$0</span>
+                              <form class="multi-range-field w-100 mb-1">
+                                <input id="multi" class="multi-range" type="range" />
+                              </form>
+                              <span class="font-weight-normal small text-muted ml-2">$100</span>
+                            </div>
+                      
+                          </section>
+                        <!--color-->
+
+                        <div class="box sidebar-banner">
+                            <figure class="image-effect">
+                                <a href="#">
+                                    <img src="{% static 'shop\assets\images\sidebar-banner.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!--side bar banner-->
+                    </div>
+                    <!--right-->
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--main-->
+{%endblock%}
+{%block modal%}
+     <!-- Modal -->
+    <div class="modal fade" id="quick-view" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">                        
+                            <div class="product">
+                                <div class="images">
+                                    <ul class="thumb-slider-modal">
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide1.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide2.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide3.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide4.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide5.jpg' %}" alt="image">
+                                        </li>
+                                    </ul>
+
+                                    <div id="thumb-pager">
+                                        <a data-slide-index="0" href="">
+                                            <img src="{% static 'shop\assets\images\thumb1.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="1" href="">
+                                            <img src="{% static 'shop\assets\images\thumb2.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="2" href="">
+                                            <img src="{% static 'shop\assets\images\thumb3.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="3" href="">
+                                            <img src="{% static 'shop\assets\images\thumb4.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="4" href="">
+                                            <img src="{% static 'shop\assets\images\thumb5.jpg' %}" alt="thumb">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--images-->
+
+                                <div class="summary entry-summary">
+                                    <h4 class="product_title entry-title mb-10">
+                                        Ladies outer fit style
+                                        <span class="product-code">SKU: RAB0D01</span>
+                                    </h4>
+
+                                    <div class="price">
+                                        <ins>$190</ins>
+                                        <del>$200</del>
+                                    </div>
+                                    <!--price-->
+
+                                    <div class="woocommerce-product-rating mb-10">
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                        </span>
+                                    </div>
+                                    <!--star rating-->
+
+                                    <div class="stock-info mb-15">
+                                        <span>
+                                            <i class="fa fa-check-square"></i> Instock
+                                        </span>
+                                    </div>
+
+                                    <div class="item-desc mb-25">
+                                        <p>
+                                            While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes the upper surface dummy the lovely valley teems with vapour around me dummy the lovely...
+                                        </p>
+                                    </div>
+                                    <!--item desc-->
+
+                                    <form action="#" class="variations_form cart">
+                                        <table class="variations">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="label">
+                                                        <label>Size</label>
+                                                    </td>
+
+                                                    <td class="value">
+                                                        <div class="custom-radio size-option">
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio" checked="">
+                                                                <span class="radio-box">S</span>
+                                                            </label>
+
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio">
+                                                                <span class="radio-box">M</span>
+                                                            </label>
+
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio">
+                                                                <span class="radio-box">L</span>
+                                                            </label>
+
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio">
+                                                                <span class="radio-box">XL</span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!--size-->
+
+                                                <tr>
+                                                    <td class="label">
+                                                        <label>Color</label>
+                                                    </td>
+
+                                                    <td class="value">
+                                                        <select>
+                                                            <option value="">Select Color</option>
+                                                            <option value="">Black</option>
+                                                            <option value="">Green</option>
+                                                            <option value="">White</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <!--color-->
+                                            </tbody>
+                                        </table>
+                                        <!--variation-->
+
+                                        <div class="single_variation_wrap">
+                                            <div class="variations_button">
+                                                <div class="quantity">
+                                                    <div class="label">
+                                                        <label>Qty</label>
+                                                    </div>
+
+                                                    <div class="quantity-wrap">
+                                                        <span class="minus"> - </span>
+                                                        <input type="number" value="1" title="Qty" class="input-text qty" size="4">
+                                                        <span class="add"> + </span>
+                                                    </div>
+                                                </div>
+
+                                                <button class="button alt">
+                                                    <i class="fa fa-shopping-cart"></i> Add to Cart
+                                                </button>
+
+                                                <button class="button-wish">
+                                                    <i class="fa fa-heart-o"></i> Add to Wishlist
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!--single variation-->
+
+                                        <ul class="social-icons">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-instagram "></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                    <!--form-->
+
+                                    <div class="product_meta">
+                                        <span class="posted_in">Category: 
+                                            <a href="#" rel="tag">Hoodies,</a>
+                                            <a href="#" rel="tag">T-Shirts</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--summery-->
+                            </div>
+                            <!--product-->
+                        </div>
+                    </div>
+                </div>
+                <!--model body-->
+            </div>
+        </div>
+    </div>
+    <!--quick view-->
+{%endblock%}
+{%block back_to_top%}
+    <!-- back to top-->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
+{%endblock%}

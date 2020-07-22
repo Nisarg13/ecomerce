@@ -1,0 +1,886 @@
+﻿{%extends 'shop/basic.html' %}
+{%load static %}
+{%block banner%}
+    <div class="main-banner home-banner">
+        <div class="fixed-banner">
+            <div class="slider-wrapper">
+                <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel"> 
+                  <!-- Carousel items -->
+                  <div class="carousel-inner">
+                      <div class="active item">
+                        <img src="{% static 'shop\assets\images\slide1.jpg' %}" alt="">
+                        <img src="{% static 'shop\assets\images\girl.png' %}" alt="" class="image-layer slide-fadein">
+
+                        <div class="carousel-caption">
+                          <h2 class="text-uppercase mb-0 color-default slide-sd  layer1">take a peak</h2>
+                          <h6 class="text-uppercase mb-40 slide-sd layer2">at our fall essentials</h6>
+
+                          <a href="#" class="btn btn-default primary-bg text-uppercase slide-sd  layer3">
+                            view collection <i class="fa fa-long-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <!--item-->
+
+
+                      <div class="item">
+                        <img src="{% static 'shop\assets\images\slide2.jpg' %}" alt="">
+                        <img src="{% static 'shop\assets\images\banner2.png' %}" alt="" class="image-layer slide slide-fadein">
+
+                        <div class="carousel-caption">
+                          <h5 class="text-uppercase mb-0 text-white slide-sd layer1">Give a new looks to your feet</h5>
+                          <h2 class="text-uppercase mb-30 text-white slide-sd layer2">summer collection</h2>
+                          <span class="primary-bg text-uppercase dis text-white slide-sd layer3"> 50% discount</span>
+                        </div>
+                      </div>
+                      <!--item-->
+                  </div>
+
+                  <!-- Carousel nav -->
+                  <a class="carousel-control left" href="#carousel" data-slide="prev">
+                    <i class="pe-7s-angle-left"></i>
+                  </a>
+                  <a class="carousel-control right" href="#carousel" data-slide="next">
+                    <i class="pe-7s-angle-right"></i>
+                  </a>
+              </div>
+
+            </div>
+            <!--banner wrapper-->
+        </div>
+    </div>
+    <!--main banner-->
+{% endblock %}
+{%block main%}
+    <main class="main primary-padding">
+        <section class="extra-info p-pb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="wrap">
+                            <figure>
+                                <img src="{% static 'shop\assets\images\shipping-icon.jpg' %}" alt="Shipping">
+                            </figure>
+                            <!--figure-->
+
+                            <div class="content">
+                                <h6 class="font-ar mb-0">free shipping</h6> A wonderful serenity
+                            </div>
+                            <!--content-->
+                        </div>
+                    </div>
+                    <!--single feature-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="wrap">
+                            <figure>
+                                <img src="{% static 'shop\assets\images\secure-icon.jpg' %}" alt="Secure">
+                            </figure>
+                            <!--figure-->
+
+                            <div class="content">
+                                <h6 class="font-ar mb-0">secure payment</h6> A wonderful serenity Feel
+                            </div>
+                            <!--content-->
+                        </div>
+                    </div>
+                    <!--single feature-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="wrap">
+                            <figure>
+                                <img src="{% static 'shop\assets\images\money-back-icon.jpg' %}" alt="Money back">
+                            </figure>
+                            <!--figure-->
+
+                            <div class="content">
+                                <h6 class="font-ar mb-0">30 days money back</h6> A wonderful serenity Feel the
+                            </div>
+                            <!--content-->
+                        </div>
+                    </div>
+                    <!--single feature-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="wrap">
+                            <figure>
+                                <img src="{% static 'shop\assets\images\guarantee-icon.jpg' %}" alt="Gurantee">
+                            </figure>
+                            <!--figure-->
+
+                            <div class="content">
+                                <h6 class="font-ar mb-0">1 year warranty</h6> Feel the presence of the
+                            </div>
+                            <!--content-->
+                        </div>
+                    </div>
+                    <!--single feature-->
+                </div>
+            </div>
+        </section>
+        <!--extra info-->
+
+        <section class="feature-cat fashion p-pb">
+            <div class="container">
+                <div class="row costom-row">
+                    <div class="col-md-3 col-sm-3 col-xs-12 first">
+                        <div class="wrap image-effect overlay">
+                            <div class="disc text-center">
+                                <div class="inner">
+                                    <div class="content">
+                                        <a href="#" class="cover">&nbsp;</a>
+                                        <h4>just arrived </h4>
+                                        <div class="btn-wrap">
+                                            <span class="btn btn-default faa-parent animated-hover">SHOP NOW <i class="fa fa-long-arrow-right faa-passing"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--disc-->
+
+                            <figure>
+                                <img src="{% static 'shop\assets\images\fashion\cat1.jpg' %}" alt="Category">
+                            </figure>
+                        </div>
+                    </div>
+                    <!--cat 1-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 second">
+                        <div class="wrap image-effect overlay">
+                            <div class="disc text-center">
+                                <div class="inner ">
+                                    <div class="content bottom-align">
+                                        <div class="inline">
+                                            <a href="#" class="cover">&nbsp;</a>
+                                            <h4> shop latest summer collection </h4>
+
+                                            <div class="btn-wrap">
+                                                <span class="btn btn-default">SHOP NOW <i class="fa fa-long-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--disc-->
+
+                            <figure>
+                                <img src="{% static 'shop\assets\images\fashion\cat2.jpg' %}" alt="Category">
+                            </figure>
+                        </div>
+                    </div>
+                    <!--cat 2-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 mb-10 third">
+                        <div class="wrap image-effect overlay">
+                            <div class="disc text-center">
+                                <div class="inner">
+                                    <div class="content">
+                                        <a href="#" class="cover">&nbsp;</a>
+                                        <h4> trendy items</h4>
+                                        <div class="btn-wrap">
+                                            <span class="btn btn-default">SHOP NOW <i class="fa fa-long-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--disc-->
+
+                            <figure>
+                                <img src="{% static 'shop\assets\images\fashion\cat3.jpg' %}" alt="Category">
+                            </figure>
+                        </div>
+                    </div>
+                    <!--cat 3-->
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 forth">
+                        <div class="wrap image-effect overlay">
+                            <div class="disc text-center">
+                                <div class="inner">
+                                    <div class="content">
+                                        <a href="#" class="cover">&nbsp;</a>
+                                        <h4>accessories</h4>
+                                        <div class="btn-wrap">
+                                            <span class="btn btn-default">SHOP NOW <i class="fa fa-long-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--disc-->
+
+                            <figure>
+                                <img src="{% static 'shop\assets\images\fashion\cat4.jpg' %}" alt="Category">
+                            </figure>
+                        </div>
+                    </div>
+                    <!--cat 4-->
+                </div>
+            </div>
+        </section>
+        <!--feature category-->
+
+        <div class="promo-banner p-pb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12"> 
+                        <figure>
+                            <a href="#" class="image-effect">
+                              <img src="{% static 'shop\assets\images\fashion\promo-banner.jpg' %}" alt="Promo 
+                              product">
+                            </a>
+                        </figure>
+                        <!--figure--> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--promo banner-->
+
+        <section class="new-arrival p-pb fashion">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="title-main text-uppercase text-center mb-60">
+                            <h2>Hot New Arrivals</h2>
+                        </div>
+                    </div>
+                    <!--title-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 left">
+                        <ul class="products">
+                            <li class="product big">
+                                <figure>
+                                    <div class="icons">
+                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
+                                        <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
+                                    </div>
+                                    <!--icons-->
+
+                                    <div class="product-wrap base-align">
+                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <img src="{% static 'shop\assets\images\fashion\hp1.png' %}" alt="Product">
+                                    </div>
+                                </figure>
+                                <!--figure-->
+
+                                <div class="content">
+                                    <h6><a href="#">Ladies black formal jacket</a></h6>
+                                    <div class="bottom">
+                                        <div class="price">
+                                            <del>$189</del>
+                                            <ins>$170</ins>
+                                        </div>
+                                        <!--price-->
+
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star-half-empty "></i> 
+                                        </span>
+                                        <!--star-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--single product-->
+                        </ul>
+
+                        <div class="subscribe-form  sec-bg">
+                            <h4>Subscribe to our Newsletter!</h4>
+                            <div class="content-wrap">
+                                <p>
+                                    While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes the upper surface
+                                </p>
+                            </div>
+                            <!--content-->
+
+                            <form action="#" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Email Address">
+                                </div>
+                                <button type="submit">
+                                    <i class="fa fa-envelope"></i> SUBSCRIBE
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--left-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 right">
+                        <ul class="products">
+                            <li class="product">
+                                <figure>
+                                    <div class="icons">
+                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
+                                        <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
+                                    </div>
+                                    <!--icons-->
+
+                                    <div class="product-wrap base-align">
+                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <img src="{% static 'shop\assets\images\fashion\fp5.png' %}" alt="Product">
+                                    </div>
+                                </figure>
+                                <!--figure-->
+
+                                <div class="content">
+                                    <h6><a href="#">Ladies black formal jacket</a></h6>
+                                    <div class="bottom">
+                                        <div class="price">
+                                            <del>$189</del>
+                                            <ins>$170</ins>
+                                        </div>
+                                        <!--price-->
+
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star-half-empty "></i> 
+                                        </span>
+                                        <!--star-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--single product-->
+
+                            <li class="product">
+                                <figure>
+                                    <div class="icons">
+                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
+                                        <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
+                                    </div>
+                                    <!--icons-->
+
+                                    <div class="product-wrap base-align">
+                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <img src="{% static 'shop\assets\images\fashion\fp6.png' %}" alt="Product">
+                                    </div>
+                                </figure>
+                                <!--figure-->
+
+                                <div class="content">
+                                    <h6><a href="#">Ladies white Tee’s</a></h6>
+                                    <div class="bottom">
+                                        <div class="price">
+                                            <del>$189</del>
+                                            <ins>$170</ins>
+                                        </div>
+                                        <!--price-->
+
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star-half-empty "></i> 
+                                        </span>
+                                        <!--star-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--single product-->
+
+                            <li class="product">
+                                <figure>
+                                    <div class="icons">
+                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
+                                        <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
+                                    </div>
+                                    <!--icons-->
+
+                                    <div class="product-wrap base-align">
+                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <img src="{% static 'shop\assets\images\fashion\fp7.png' %}" alt="Product">
+                                    </div>
+                                </figure>
+                                <!--figure-->
+
+                                <div class="content">
+                                    <h6><a href="#">Gents stripe griped Tee’s</a></h6>
+                                    <div class="bottom">
+                                        <div class="price">
+                                            <del>$189</del>
+                                            <ins>$170</ins>
+                                        </div>
+                                        <!--price-->
+
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star-half-empty "></i> 
+                                        </span>
+                                        <!--star-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--single product-->
+
+                            <li class="product">
+                                <figure>
+                                    <div class="icons">
+                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
+                                        <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
+                                    </div>
+                                    <!--icons-->
+
+                                    <div class="product-wrap base-align">
+                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <img src="{% static 'shop\assets\images\fashion\fp8.png' %}" alt="Product">
+                                    </div>
+                                </figure>
+                                <!--figure-->
+
+                                <div class="content">
+                                    <h6><a href="#">Ladies full body gown</a></h6>
+                                    <div class="bottom">
+                                        <div class="price">
+                                            <del>$189</del>
+                                            <ins>$170</ins>
+                                        </div>
+                                        <!--price-->
+
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star-half-empty "></i> 
+                                        </span>
+                                        <!--star-->
+                                    </div>
+                                </div>
+                            </li>
+                            <!--single product-->
+                        </ul>
+                    </div>
+                    <!--right-->
+                </div>
+            </div>
+        </section>
+        <!--new arrival-->
+
+        <section class="history-block p-pb">
+            <div class="bg-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="wrap">
+                                <div class="inner">
+                                    <h2 class="text-uppercase mb-15"><span>OUR</span> history</h2>
+                                    <div class="content-wrap mb-40">
+                                        <p>
+                                            While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes the upper surface dummy the lovely valley teems with vapour around me dummy the lovely...
+                                        </p>
+                                    </div>
+                                    <!--content-->
+
+                                    <h4>
+                                        <a href="#" class="faa-parent animated-hover">Meet RAB <i class="fa fa-long-arrow-right faa-passing"></i></a>
+                                    </h4>
+                                </div>
+
+                                <figure>
+                                    <img src="{% static 'shop\assets\images\fashion\couple.png' %}" alt="Couple">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--history bock-->
+
+        <section class="fashion-news p-pb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="title-main text-uppercase text-center mb-60">
+                            <h2>fashion news</h2>
+                        </div>
+                    </div>
+                </div>
+                <!--title-->
+
+                <div class="row news-wrap mb-20">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="wrap mb-50">
+                            <figure>
+                                <a href="#" class="image-effect overlay">
+                                    <img src="{% static 'shop\assets\images\fashion\fn-1.jpg' %}" alt="Fashion news">
+                                </a>
+                            </figure>
+                            <!--figure-->
+
+                            <div class="entry-content">
+                                <h5 class="entry-title mb-10">
+                                    <a href="#">Perfect for getting your shit together.</a>
+                                </h5>
+                                <div class="post-info  mb-15">
+                                    <span><i class="pe-7s-alarm"></i> 19 Jan 2017 </span>
+                                    <span><i class="pe-7s-users"></i> David Willson </span>
+                                </div>
+                                <!--post info-->
+
+                                <div class="entry-post-content">
+                                    <p>
+                                        While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--singel news-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="wrap mb-50">
+                            <figure>
+                                <a href="#" class="image-effect overlay">
+                                    <img src="{% static 'shop\assets\images\fashion\fn-2.jpg' %}" alt="Fashion news">
+                                </a>
+                            </figure>
+                            <!--figure-->
+
+                            <div class="entry-content">
+                                <h5 class="entry-title mb-10">
+                                    <a href="#">Perfect for getting your shit together.</a>
+                                </h5>
+                                <div class="post-info  mb-15">
+                                    <span><i class="pe-7s-alarm"></i> 19 Jan 2017 </span>
+                                    <span><i class="pe-7s-users"></i> David Willson </span>
+                                </div>
+                                <!--post info-->
+
+                                <div class="entry-post-content">
+                                    <p>
+                                        While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--singel news-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="wrap mb-50">
+                            <figure>
+                                <a href="#" class="image-effect overlay">
+                                    <img src="{% static 'shop\assets\images\fashion\fn-3.jpg' %}" alt="Fashion news">
+                                </a>
+                            </figure>
+                            <!--figure-->
+
+                            <div class="entry-content">
+                                <h5 class="entry-title mb-10">
+                                    <a href="#">Perfect for getting your shit together.</a>
+                                </h5>
+
+                                <div class="post-info  mb-15">
+                                    <span><i class="pe-7s-alarm"></i> 19 Jan 2017 </span>
+                                    <span><i class="pe-7s-users"></i> David Willson </span>
+                                </div>
+                                <!--post info-->
+
+                                <div class="entry-post-content">
+                                    <p>
+                                        While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--singel news-->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="wrap mb-50">
+                            <figure>
+                                <a href="#" class="image-effect overlay">
+                                    <img src="{% static 'shop\assets\images\fashion\fn-4.jpg' %}" alt="Fashion news">
+                                </a>
+                            </figure>
+                            <!--figure-->
+
+                            <div class="entry-content">
+                                <h5 class="entry-title mb-10">
+                                    <a href="#">Perfect for getting your shit together.</a>
+                                </h5>
+
+                                <div class="post-info  mb-15">
+                                    <span><i class="pe-7s-alarm"></i> 19 Jan 2017 </span>
+                                    <span><i class="pe-7s-users"></i> David Willson </span>
+                                </div>
+                                <!--post info-->
+
+                                <div class="entry-post-content">
+                                    <p>
+                                        While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--singel news-->
+                </div>
+                <!--news wrap-->
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <a href="#" class="btn btn-default bdr text-uppercase faa-parent animated-hover">
+                            view all post <i class="fa fa-long-arrow-right faa-passing"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--fashion news-->
+
+    </main>
+    <!--main-->
+{%endblock%}
+    <!-- Modal -->
+{%block modal%}
+    <div class="modal fade" id="quick-view" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="product">
+                                <div class="images">
+                                    <ul class="thumb-slider-modal">
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide1.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide2.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide3.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide4.jpg' %}" alt="image">
+                                        </li>
+                                        <li>
+                                            <img src="{% static 'shop\assets\images\modal-slide5.jpg' %}" alt="image">
+                                        </li>
+                                    </ul>
+
+                                    <div id="thumb-pager">
+                                        <a data-slide-index="0" href="">
+                                            <img src="{% static 'shop\assets\images\thumb1.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="1" href="">
+                                            <img src="{% static 'shop\assets\images\thumb2.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="2" href="">
+                                            <img src="{% static 'shop\assets\images\thumb3.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="3" href="">
+                                            <img src="{% static 'shop\assets\images\thumb4.jpg' %}" alt="thumb">
+                                        </a>
+                                        <a data-slide-index="4" href="">
+                                            <img src="{% static 'shop\assets\images\thumb5.jpg'%}" alt="thumb">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--images-->
+
+                                <div class="summary entry-summary">
+                                    <h4 class="product_title entry-title mb-10">
+                                        Ladies outer fit style
+                                        <span class="product-code">SKU: RAB0D01</span>
+                                    </h4>
+
+                                    <div class="price">
+                                        <ins>$190</ins>
+                                        <del>$200</del>
+                                    </div>
+                                    <!--price-->
+
+                                    <div class="woocommerce-product-rating mb-10">
+                                        <span class="star-rating">
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                           <i class="fa fa-star"></i> 
+                                        </span>
+                                    </div>
+                                    <!--star rating-->
+
+                                    <div class="stock-info mb-15">
+                                        <span>
+                                            <i class="fa fa-check-square"></i> Instock
+                                        </span>
+                                    </div>
+
+                                    <div class="item-desc mb-25">
+                                        <p>
+                                            While lorem ipsum is a dummy the lovely valley teems with vapour around me, and the meridia sun strikes the upper surface dummy the lovely valley teems with vapour around me dummy the lovely...
+                                        </p>
+                                    </div>
+                                    <!--item desc-->
+
+                                    <form action="#" class="variations_form cart">
+                                        <table class="variations">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="label">
+                                                        <label>Size</label>
+                                                    </td>
+
+                                                    <td class="value">
+                                                        <div class="custom-radio size-option">
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio" checked="">
+                                                                <span class="radio-box">S</span>
+                                                            </label>
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio">
+                                                                <span class="radio-box">M</span>
+                                                            </label>
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio">
+                                                                <span class="radio-box">L</span>
+                                                            </label>
+                                                            <label class="custom-radio">
+                                                                <input name="attribute_pa_size" type="radio">
+                                                                <span class="radio-box">XL</span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!--size-->
+
+                                                <tr>
+                                                    <td class="label">
+                                                        <label>Color</label>
+                                                    </td>
+
+                                                    <td class="value">
+                                                        <select>
+                                                            <option value="">Select Color</option>
+                                                            <option value="">Black</option>
+                                                            <option value="">Green</option>
+                                                            <option value="">White</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <!--color-->
+                                            </tbody>
+                                        </table>
+                                        <!--variation-->
+
+                                        <div class="single_variation_wrap">
+                                            <div class="variations_button">
+                                                <div class="quantity">
+                                                    <div class="label">
+                                                        <label>Qty</label>
+                                                    </div>
+
+                                                    <div class="quantity-wrap">
+                                                        <span class="minus"> - </span>
+                                                        <input type="number" value="1" title="Qty" class="input-text qty" size="4">
+                                                        <span class="add"> + </span>
+                                                    </div>
+                                                </div>
+
+                                                <button class="button alt">
+                                                    <i class="fa fa-shopping-cart"></i> Add to Cart
+                                                </button>
+                                                <button class="button-wish">
+                                                    <i class="fa fa-heart-o"></i> Add to Wishlist
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!--single variation-->
+
+                                        <ul class="social-icons">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-instagram "></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                    <!--form-->
+                                    <div class="product_meta">
+                                        <span class="posted_in">Category: 
+                                            <a href="#" rel="tag">Hoodies,</a>
+                                            <a href="#" rel="tag">T-Shirts</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--summery-->
+                            </div>
+                            <!--product-->
+                        </div>
+                    </div>
+                </div>
+                <!--model body-->
+            </div>
+        </div>
+    </div>
+    <!--quick view-->
+{%endblock%}
+{%block newsletter%}
+    <div class="modal fade" id="newsletter" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"> 
+                <div class="modal-body text-center"> 
+                     <div class="newsletter">
+                        <div class="inner-content">
+                            <h6>Join our subscriber list today and</h6>
+                            <h6>Get promotional offer <span>30% OFF</span></h6>
+
+                            <form action="#" class="form-inline"> 
+                                <input type="text" placeholder="Enter your email address.."> 
+                                <input type="submit" class="btn-subscribe" value="subscribe"> 
+                            </form>
+                        </div>
+                        <!--inner content-->
+                        <span class="ab-text"><a href="#">I am not interested.</a></span>
+                    </div>
+                    <!--newsletter-->           
+                </div>
+                <!--modal body-->
+            </div>
+        </div>
+    </div> 
+    <!--modal newsletter-->
+{%endblock%}
+{%block back_to_top%}
+    <!-- back to top-->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
+{%endblock%}
+
