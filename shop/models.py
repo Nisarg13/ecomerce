@@ -36,10 +36,18 @@ class Customer(models.Model):
 class Category(models.Model):
     cname=models.CharField(max_length=30)
 
+
+class color_tbl(models.Model):
+    select_color=models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.select_color
+
 class Product(models.Model):
     user_id=models.ForeignKey(tbl_User,on_delete=models.CASCADE)
     pid=models.ForeignKey(ProductManager,on_delete=models.CASCADE)
     cid=models.ForeignKey(Category,on_delete=models.CASCADE)
+    color=models.ManyToManyField(color_tbl)
     product_id=models.AutoField
     produt_name=models.CharField(max_length=50)
     category=models.CharField(max_length=50,default="")
@@ -50,6 +58,10 @@ class Product(models.Model):
     image=models.ImageField(upload_to="shop/images",default="")
     def __str__(self):
         return self.produt_name
+    def color_list(self):
+        return [str(color)for color in self.color.all()]
+
+
 class cart(models.Model):
     #user_id=models.ForeignKey(tbl_User,on_delete=models.CASCADE)
     product_id=models.ForeignKey(Product,on_delete=models.CASCADE)
@@ -97,3 +109,4 @@ class payment(models.Model):
     successfull=models.BooleanField(default=False)
     amount=models.FloatField()
     payment_date=models.DateTimeField(auto_now_add=True)
+

@@ -78,7 +78,7 @@
                                
                                 <figure>
                                     <div class="icons">
-                                        <a href="#" class="btn"><i class="pe-7s-cart"></i></a>
+                                        <a href="{% url 'add-cart-single-product-view' pk=i.id %}" class="btn"><i class="pe-7s-cart"></i></a>
                                         <a href="{% url 'add-wishlist' pk=i.id %}" class="btn"><i class="pe-7s-like"></i></a>
                                         <a href="#" class="btn"><i class="pe-7s-edit"></i></a>
                                         <a href="#" class="btn" data-toggle="modal" data-target="#quick-view"><i class="pe-7s-look"></i></a>
@@ -86,7 +86,7 @@
                                     <!--icons-->
                                     
                                     <div class="product-wrap base-align">
-                                        <a href="09-rab-shop-product-single.html">&nbsp;</a>
+                                        <a href="{% url 'add-single-product-view' pk=i.id %}">&nbsp;</a>
                                         <img src="{{i.image.url}}" alt="Product">
                                     </div>
                                 </figure>
@@ -204,30 +204,24 @@
                             </ul>
                         </div>
                         <!--size-->
-
+                        
                         <div class="box mb-30">
                             <h5 class="sec-title">Color</h5>
                             <ul class="shop-sidebar">
+                                {%for i in color_data%}
                                 <li>
-                                    <a href="#">Black <span class="no">[10]</span></a>
+                                    {%if i.select_color in color_list%}
+                                    <input type="checkbox"  name="colors" value="{{i.select_color}}" checked>
+                                    {%else%}
+                                    <input type="checkbox" name="colors" value="{{i.select_color}}">
+                                    {%endif%}
+                                    {{i.select_color}} 
                                 </li>
-
-                                <li>
-                                    <a href="#">Green <span class="no">[19]</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Sky-Blue <span class="no">[09]</span></a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Purple <span class="no">[19]</span></a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Navy Blue <span class="no">[19]</span></a>
-                                </li>
+                                {%endfor%}
+                               
                             </ul>
                         </div>
+                        
                         <!--color-->
 
                         <div class="box mb-30">

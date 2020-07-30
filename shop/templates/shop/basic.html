@@ -13,8 +13,8 @@
         <meta name="author" content="">
     
         <!-- favicon -->
-        <link rel="shortcut icon" type="image/png" href="assets\images\fav.jpg">
-        <link rel="shortcut icon" type="image/png" href="assets\images\fav.jpg">
+        <link rel="shortcut icon" type="image/png" href="{% static 'shop\assets\images\fav.jpg'%}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'shop\assets\images\fav.jpg'%}">
     
         <!-- GOOGLE FONT -->
         <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i%7CMr+Dafoe%7CPoppins:300,400,500,600,700" rel="stylesheet"> 
@@ -282,17 +282,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle">Shop</a>
                             <ul class="sub-menu dropdown-menu">
-                                <li><a href="04-rab-fullwidth-shop-grid.html">Shop full width</a></li>
-                                <li><a href="{% url 'rab_shop_left_sidebar_grid'%}">Shop grid left sidebar</a></li>
-                                <li><a href="06-rab-shop-right-sidebar-grid.html">Shop grid  right sidebar</a></li>
-                                <li><a href="07-rab-shop-left-sidebar-list.html">Shop list  left sidebar</a></li>
-                                <li><a href="08-rab-shop-right-sidebar-list.html">Shop list  right sidebar</a></li>
-                                <li><a href="09-rab-shop-product-single.html">Shop product single</a></li>
-                                <li> <a href="10-rab-shop-product-single-grouped.html">Shop product single grouped</a></li>
+                                <li><a href="{% url 'rab_shop_left_sidebar_grid'%}">Shop</a></li>
                                 <li><a href="{%url 'view-cart'%}">Cart</a></li>
                                 <li><a href="{%url 'wishlist'%}">Wishlist</a></li>
                                 <li><a href="12-rab-shop-checkout.html">Checkout</a></li>
-                                <li><a href="{%url 'order-complete-view'%}">Order Complete</a></li>
                             </ul>
                         </li>
 
@@ -325,6 +318,8 @@
     {%block banner%}
 
     {% endblock banner %}
+
+    
     {%block main%}
 
     {% endblock main%}
@@ -436,7 +431,9 @@
     
 
     <!--color box-->
+    
     <script src="{% static 'shop\assets\js\jquery.colorbox-min.js' %}"></script>
+    
     
     <!-- wow -->
     <script src="{% static 'shop\assets\js\wow.min.js' %}"></script>
@@ -452,6 +449,7 @@
 
     <!--Costom js-->
     <script src="{% static 'shop\assets\js\main.js' %}"></script>
+    
 </body>
 
 </html>

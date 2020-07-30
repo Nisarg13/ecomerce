@@ -9,7 +9,7 @@ from django.views.decorators.cache import cache_control
 import stripe
 # Create your views here.
 
-stripe.api_key = "<YOUR SECRET KEY>"
+stripe.api_key = "<YOUR STRIPE KEY>"
 
 def index(request):
     data=Product.objects.all()
@@ -139,18 +139,54 @@ def register(request):
 
         
 def rab_shop_left_sidebar_grid(request):
-    data=Product.objects.all()
-    w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
-    c_data=cart.objects.filter(c_id_id=request.session['cid'])
-    request.session['wishlist_length']=len(w_data)
-    request.session['cart_length']=len(c_data)
-    return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data})
+    if "email" not in request.session:
+        return HttpResponseRedirect(reverse(index))
+    else:
+        data=Product.objects.all()
+        color_data=color_tbl.objects.all()
+        w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+        c_data=cart.objects.filter(c_id_id=request.session['cid'])
+        request.session['wishlist_length']=len(w_data)
+        request.session['cart_length']=len(c_data)
+        return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data,'color_data':color_data})
 
 def filter(request):
+    data=Product.objects.all()
+    color_data=color_tbl.objects.all()
+    color_list=request.POST.getlist('colors')
+    print("------------------------->",color_list)
+    id_list=[]
+    #for i in data:
+     #   color.append(i.color_list())
+      #  print(i.color_list(),"------>id:",i.id)
+    #print(color)
+    for i in color_list:
+     #   print(i)
+        for j in data:
+            print(j.color_list())
+            if i in j.color_list():
+                id_list.append(j.id)
+                print("------------------------>",j.id)
+            else:
+                pass
+    id_list=list(dict.fromkeys(id_list)) # This is for remove repeted id
+    #print(id_list)
+    #color_data_list=[]
+    #for i in id_list:
+     #   data=Product.objects.filter(pk=i)
+      #  print(data)
+    #print(color_data_list)
     min_price=request.POST["min_price"]
     max_price=request.POST["max_price"]
-    data=Product.objects.filter(price__range=(min_price,max_price))
-    return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data})
+    if id_list:
+        data=Product.objects.filter(id__in=id_list ,price__range=(min_price,max_price))
+    else:
+        data=Product.objects.filter(price__range=(min_price,max_price))
+    #for i in id_list:
+     #   data=Product.objects.filter(id=i)
+      #  print(data)
+    #data=Product.objects.filter(id__in=id_list)
+    return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data,'color_data':color_data,'color_list':color_list})
 
 def classic(request):
     return render(request,"shop/classic.html")
@@ -394,3 +430,31 @@ def order_complete_view(request):
     c_data=cart.objects.filter(c_id_id=request.session['cid'])
     request.session['cart_length']=len(c_data)
     return render(request,"shop/order_complete.html")
+
+
+def single_product_view(request):
+    return render(request,"shop/09-rab-shop-product-single.html")
+
+
+def add_single_product_view(request,pk):
+    if "email" not in request.session:
+        return HttpResponseRedirect(reverse(index))
+    else:
+        print("-------------------------->",pk)
+        p_id=Product.objects.get(id=pk)
+        return render(request,"shop/09-rab-shop-product-single.html",{'p_id':p_id})
+
+
+def add_cart_single_product_view(request,pk):
+    if "email" not in request.session:
+        return HttpResponseRedirect(reverse(index))
+    else:
+        print("-------------------------->",pk)
+        p_id=Product.objects.get(id=pk)
+        cid=cart.objects.filter(product_id=p_id,c_id_id=request.session['cid'])
+        if cid:
+            pass
+        else:
+            cart_insert=cart.objects.create(product_id=p_id,qty=1,c_id_id=request.session['cid'])
+            
+        return HttpResponseRedirect(reverse("view-cart"))

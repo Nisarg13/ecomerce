@@ -271,15 +271,7 @@
     $amount.html("Rs" + $rangeSlider.slider("values", 0) +
         " - Rs" + $rangeSlider.slider("values", 1));
 
-        $('#multi').mdbRange({
-            single: {
-              active: true,
-              multi: {
-                active: true,
-                rangeLength: 1
-              },
-            }
-          });
+
 
     //Quickview modal
     $quickView.on('shown.bs.modal', function(e) {
