@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'blog',
+    'paypal.standard.ipn',
     
     
 ]
@@ -141,3 +142,6 @@ else:
     STRIPE_PUBLISHABLE_KEY='YOUR STRIPE LIVE PUB KEY'
     STRIPE_SECRET_KEY="YOUR STRIPE LIVE SECRET KEY"
 
+PAYPAL_RECEIVER_EMAIL = '<YOUR EMAIL ID>'
+
+PAYPAL_TEST = True

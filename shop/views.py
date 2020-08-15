@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.conf import settings
 from django.views.decorators.cache import cache_control
 import stripe
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # Create your views here.
 
 stripe.api_key = "<YOUR STRIPE KEY>"
@@ -148,6 +149,15 @@ def rab_shop_left_sidebar_grid(request):
         c_data=cart.objects.filter(c_id_id=request.session['cid'])
         request.session['wishlist_length']=len(w_data)
         request.session['cart_length']=len(c_data)
+        all_data=Paginator(data,1)
+        page=request.GET.get('page')
+        try:
+            data=all_data.page(page)
+        except PageNotAnInteger:
+            data=all_data.page(1)
+        except EmptyPage:
+            data=all_data.page(all_data.num_pages)
+
         return render(request,"shop/05-rab-shop-left-sidebar-grid.html",{'data':data,'color_data':color_data})
 
 def filter(request):
@@ -370,59 +380,71 @@ def checkout_view(request):
             my_total+=i.price()
         total_price=my_total+30
         print("------------------>total_price",my_total)
-        return render(request,"shop/checkout.html",{'c_data':c_data,'my_total':my_total,'total_price':total_price})
+        dollar= (total_price/64)
+        return render(request,"shop/checkout.html",{'c_data':c_data,'my_total':my_total,'total_price':total_price,'dollar':dollar})
 
 def order_complete(request):
     if "email" not in request.session:
         return HttpResponseRedirect(reverse(index))
     else:
-        country=request.POST['country']
-        print("-------------------------->",country)
-        firstname=request.POST['firstname']
-        lastname=request.POST['lastname']
-        name=firstname+lastname
-        address_line1=request.POST['line1']
-        address_line2=request.POST['line2']
-        town=request.POST['town']
-        state=request.POST['state']
-        zip_code=request.POST['zip']
-        phoneno=request.POST['phoneno']
-        email=request.session['email'],
-        amount_in_inr_paisa=int(request.POST['Grand_Total'])*100
-        print("-------------------------------->amount:",amount_in_inr_paisa)
-        print("--------------------------------->",request.POST['stripeToken'])
-        customer=stripe.Customer.create(
-        email=request.session['email'],
-        name=firstname+lastname,
-        source=request.POST["stripeToken"],
-        address={
-                'line1':address_line1,
-                'line2':address_line2,
-                'postal_code':zip_code,
-                'city':town,
-                'state':state,
-                'country':country
+        try:
+            country=request.POST['country']
+            print("-------------------------->",country)
+            firstname=request.POST['firstname']
+            lastname=request.POST['lastname']
+            name=firstname+lastname
+            address_line1=request.POST['line1']
+            address_line2=request.POST['line2']
+            town=request.POST['town']
+            state=request.POST['state']
+            zip_code=request.POST['zip']
+            phoneno=request.POST['phoneno']
+            email=request.session['email'],
+            amount_in_inr_paisa=int(request.POST['Grand_Total'])*100
+            print("-------------------------------->amount:",amount_in_inr_paisa)
+            print("--------------------------------->",request.POST['stripeToken'])
+            customer=stripe.Customer.create(
+            email=request.session['email'],
+            name=firstname+lastname,
+            source=request.POST["stripeToken"],
+            address={
+                    'line1':address_line1,
+                    'line2':address_line2,
+                    'postal_code':zip_code,
+                    'city':town,
+                    'state':state,
+                    'country':country
 
-        }
-        )
-        print("-------------------------------->",name)
-        charge=stripe.Charge.create(
-            customer=customer,
-            amount=amount_in_inr_paisa,
-            currency='inr',
-            description='rab_fashion_order',
-           # card=source
-        
-        )
-        address=Address.objects.create(c_id_id=request.session['cid'],name=name,address_line1=address_line1,address_line2=address_line2,city=town,country=country,zip_code=zip_code,contact_no=phoneno)
-        order_view=order.objects.create(c_id_id=request.session['cid'],status="Ordered",address=address)
-        c_id=cart.objects.filter(c_id=request.session['cid'])
-        payment.objects.create(order=order_view,amount=(amount_in_inr_paisa/100),payment_method="Card",successfull=True)
-        for i in c_id:
-            order_item.objects.create(order=order_view,product_id_id=i.product_id_id,qty=i.qty,price=i.product_id.price)
-        c_id.delete()
-        c_data=cart.objects.filter(c_id_id=request.session['cid'])
-        request.session['cart_length']=len(c_data)
+            }
+            )
+            print("-------------------------------->",name)
+            charge=stripe.Charge.create(
+                customer=customer,
+                amount=amount_in_inr_paisa,
+                currency='inr',
+                description='rab_fashion_order',
+            # card=source
+            
+            )
+            address=Address.objects.create(c_id_id=request.session['cid'],name=name,address_line1=address_line1,address_line2=address_line2,city=town,country=country,zip_code=zip_code,contact_no=phoneno)
+            order_view=order.objects.create(c_id_id=request.session['cid'],status="Ordered",address=address)
+            c_id=cart.objects.filter(c_id=request.session['cid'])
+            payment.objects.create(order=order_view,amount=(amount_in_inr_paisa/100),payment_method="Card",successfull=True)
+            for i in c_id:
+                order_item.objects.create(order=order_view,product_id_id=i.product_id_id,qty=i.qty,price=i.product_id.price)
+            c_id.delete()
+            c_data=cart.objects.filter(c_id_id=request.session['cid'])
+            request.session['cart_length']=len(c_data)
+        except:
+            address=Address.objects.create(c_id_id=request.session['cid'],name=name,address_line1=address_line1,address_line2=address_line2,city=town,country=country,zip_code=zip_code,contact_no=phoneno)
+            order_view=order.objects.create(c_id_id=request.session['cid'],status="Ordered",address=address)
+            c_id=cart.objects.filter(c_id=request.session['cid'])
+            payment.objects.create(order=order_view,amount=(amount_in_inr_paisa/100),payment_method="PayPal",successfull=True)
+            for i in c_id:
+                order_item.objects.create(order=order_view,product_id_id=i.product_id_id,qty=i.qty,price=i.product_id.price)
+            c_id.delete()
+            c_data=cart.objects.filter(c_id_id=request.session['cid'])
+            request.session['cart_length']=len(c_data)
         return render(request,"shop/order_complete.html")
 def order_complete_view(request):
     if "email" not in request.session:

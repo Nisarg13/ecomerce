@@ -260,6 +260,7 @@
                                                     </label>
                                                     <input type="text" placeholder="Email Address" name="email">
                                                     <input type="hidden" name="Grand_Total" id="email" value="{{total_price}}" class="form-control" >
+                                                   
                                                 </div>
                                                 <!--address name-->
                                             </div>
@@ -314,7 +315,7 @@
                                                     </tr>
                                                     <tr class="order-total" >
                                                         <th>Order Totals</th>
-                                                        <th>{{total_price}}</th>
+                                                        <th>{{total_price}} RS OR {{dollar}}  USD</th>
                                                        
                                                     </tr>
                                                     
@@ -348,12 +349,45 @@
                                                         <label> Cash on Delivery </label>
                                                     </li>
 
-                                                    <li class="wc_payment_method payment_method_ppec_paypal">
+                                                    <!--<li class="wc_payment_method payment_method_ppec_paypal">
                                                         <input type="radio" name="payment_method" value="bacs">
                                                         <label> PayPal <img src="{% static 'shop\assets\images\paypal.jpg'%}" alt="">
                                                         </label>
-                                                    </li>
+                                                    </li>-->
                                                 </ul>
+                                                <div id="paypal-button-container"></div>
+                                                <script src="https://www.paypal.com/sdk/js?client-id=<YOUR CLIENT>&currency=USD"></script>
+                                                <script>
+                                                    var total='{{dollar}}'
+                                                    // Render the PayPal button into #paypal-button-container
+                                                    paypal.Buttons({
+                                            
+                                                        // Set up the transaction
+                                                        createOrder: function last(data, actions) {
+                                                            return actions.order.create({
+                                                                purchase_units: [{
+                                                                    amount: {
+                                                                        value: parseFloat(total).toFixed(2)
+                                                                    }
+                                                                }]
+                                                            });
+                                                        },
+                                            
+                                                        // Finalize the transaction
+                                                        onApprove: function last(data, actions) {
+                                                            return actions.order.capture().then(function(details) {
+                                                                // Show a success message to the buyer
+                                                                
+                                                                
+                                                                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                                                                  this.form.submit();
+                                                                   
+                                                            });
+                                                        }
+                                            
+                                            
+                                                    }).render('#paypal-button-container');
+                                                </script>
                                                     <div class="form-row">
                                                       <label for="card-element" >
                                                         Credit or debit card
@@ -431,7 +465,7 @@
     <script>
 
         // Create a Stripe client.
-var stripe = Stripe('pk_test_51H6mEhIS7pb8wtrpB4El1LZX6wJyJeeqOaPaiELjGrhVmjdVgkJCNxIimLr5ODIcRAecjN1fWH9CYmUIeRs0dAih00VrKYNkdv');
+var stripe = Stripe('<YOUR STRIPE KEY>');
 
 // Create an instance of Elements.
 var elements = stripe.elements();

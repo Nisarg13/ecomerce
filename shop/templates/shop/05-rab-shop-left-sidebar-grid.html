@@ -56,17 +56,21 @@
                             <!--short by-->
 
                             <div class="woocommerce-result-count">
-                                Showing 1–20 of 340 results
+                                Showing 1-{{data.paginator.num_pages}} of {{data.paginator.count}} results
                             </div>
                             <!--result-->
 
                             <nav class="woocommerce-pagination">
                                 <ul class="page-numbers">
-                                    <li><a class="prev page-numbers" href="#">&lt;</a></li>
-                                    <li><span class="page-numbers current">1</span></li>
-                                    <li><a class="page-numbers" href="#">2</a></li>
-                                    <li><a class="page-numbers" href="#">3</a></li>
-                                    <li><a class="next page-numbers" href="#">&gt;</a></li>
+                                    {% if data.has_previous %}
+                                    <li><a class="prev page-numbers" href="?page={{data.previous_page_number}}">&lt;</a></li>
+                                    {%endif%}
+                                    <li><span class="page-numbers current">{{data.number}}</span></li>
+                                  <!----  <li><a class="page-numbers" href="#">2</a></li>
+                                    <li><a class="page-numbers" href="#">3</a></li>-->
+                                    {% if data.has_next %}
+                                    <li><a class="next page-numbers" href="?page={{data.next_page_number}}">&gt;</a></li>
+                                    {%endif%}
                                 </ul>
                             </nav>
                         </div>
@@ -119,11 +123,18 @@
 
                         <nav class="woocommerce-pagination text-center">
                             <ul class="page-numbers">
-                                <li><a class="prev page-numbers" href="#">&lt;</a></li>
-                                <li><span class="page-numbers current">1</span></li>
-                                <li><a class="page-numbers" href="#">2</a></li>
-                                <li><a class="page-numbers" href="#">3</a></li>
-                                <li><a class="next page-numbers" href="#">&gt;</a></li>
+                                Current-Page:
+                                <li><span class="page-numbers current">{{data.number}}</span></li>
+                                &nbsp;&nbsp;
+                                {% if data.has_previous %}
+                                    <li><a class="prev page-numbers" href="?page={{data.previous_page_number}}">&lt;</a></li>
+                                {%endif%}
+                                {% for i in data.paginator.page_range %}
+                                <li><a class="page-numbers" href="?page={{ i }}">{{i}}</a></li>
+                                {%endfor%}
+                                {% if data.has_next %}
+                                    <li><a class="next page-numbers" href="?page={{data.next_page_number}}">&gt;</a></li>
+                                {%endif%}
                             </ul>
                         </nav>
                         <!--pegination-->
