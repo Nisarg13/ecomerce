@@ -42,4 +42,5 @@ urlpatterns = [
     path('single-product-view/', views.single_product_view, name='single-product-view'),
     path('add-single-product-view/<int:pk>', views.add_single_product_view, name='add-single-product-view'),
     path('add-cart-single-product-view/<int:pk>', views.add_cart_single_product_view, name='add-cart-single-product-view'),
+    path('search', views.search, name='search'),
 ]

@@ -10,7 +10,7 @@ import stripe
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # Create your views here.
 
-stripe.api_key = "<YOUR STRIPE KEY>"
+stripe.api_key = "<ENTER YOUR STRIPE KEY>"
 
 def index(request):
     data=Product.objects.all()
@@ -480,3 +480,26 @@ def add_cart_single_product_view(request,pk):
             cart_insert=cart.objects.create(product_id=p_id,qty=1,c_id_id=request.session['cid'])
             
         return HttpResponseRedirect(reverse("view-cart"))
+
+def search(request):
+    
+   #return HttpResponse("Hi")
+    if "email" not in request.session:
+        return HttpResponseRedirect(reverse(index))
+    else:
+        query= request.GET['search']
+        data=Product.objects.filter(produt_name__icontains=query)
+        color_data=color_tbl.objects.all()
+        w_data=wishlist_tbl.objects.filter(c_id_id=request.session['cid'])
+        c_data=cart.objects.filter(c_id_id=request.session['cid'])
+        request.session['wishlist_length']=len(w_data)
+        request.session['cart_length']=len(c_data)
+        page=request.GET.get('page',1)
+        all_data=Paginator(data,1)
+        try:
+            data=all_data.page(page)
+        except PageNotAnInteger:
+            data=all_data.page(1)
+        except EmptyPage:
+            data=all_data.page(all_data.num_pages)
+        return render(request,"shop/search.html",{'data':data,'color_data':color_data,'query':query})

@@ -1,4 +1,4 @@
-﻿{%extends 'shop/basic.html' %}
+{%extends 'shop/basic.html' %}
 {%load static %}
 {%block banner%}
     <div class="main-banner inner-banner banner-scroll">
@@ -63,13 +63,13 @@
                             <nav class="woocommerce-pagination">
                                 <ul class="page-numbers">
                                     {% if data.has_previous %}
-                                    <li><a class="prev page-numbers" href="?page={{data.previous_page_number}}">&lt;</a></li>
+                                    <li><a class="prev page-numbers" href="?{% if query %}search={{query}}&{% endif %}page={{data.previous_page_number}}">&lt;</a></li>
                                     {%endif%}
                                     <li><span class="page-numbers current">{{data.number}}</span></li>
                                   <!----  <li><a class="page-numbers" href="#">2</a></li>
                                     <li><a class="page-numbers" href="#">3</a></li>-->
                                     {% if data.has_next %}
-                                    <li><a class="next page-numbers" href="?page={{data.next_page_number}}">&gt;</a></li>
+                                    <li><a class="next page-numbers" href="?{% if query %}search={{query}}&{% endif %}page={{data.next_page_number}}">&gt;</a></li>
                                     {%endif%}
                                 </ul>
                             </nav>
@@ -127,13 +127,13 @@
                                 <li><span class="page-numbers current">{{data.number}}</span></li>
                                 &nbsp;&nbsp;
                                 {% if data.has_previous %}
-                                    <li><a class="prev page-numbers" href="?page={{data.previous_page_number}}">&lt;</a></li>
+                                    <li><a class="prev page-numbers" href="?{% if query %}search={{query}}&{% endif %}page={{data.previous_page_number}}">&lt;</a></li>
                                 {%endif%}
                                 {% for i in data.paginator.page_range %}
-                                <li><a class="page-numbers " href="?page={{ i }}">{{i}}</a></li>
+                                <li><a class="page-numbers" href="?{% if query %}search={{query}}&{% endif %}page={{ i }}">{{i}}</a></li>
                                 {%endfor%}
                                 {% if data.has_next %}
-                                    <li><a class="next page-numbers" href="?page={{data.next_page_number}}">&gt;</a></li>
+                                    <li><a class="next page-numbers" href="?{% if query %}search={{query}}&{% endif %}page={{data.next_page_number}}">&gt;</a></li>
                                 {%endif%}
                             </ul>
                         </nav>

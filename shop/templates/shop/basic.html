@@ -61,8 +61,8 @@
                     <!--logo-->
 
                     <div class="header-right">
-                        <form class="searchbox navbar-form">
-                            <input type="search" placeholder="Search..." name="search" class="searchbox-input" onkeyup="buttonUp();" required="">
+                        <form class="searchbox navbar-form" action="{%url 'search' %}" method="GET" >
+                            <input type="search" placeholder="Search..." id="search" name="search" value="{{query}}" class="searchbox-input" onkeyup="buttonUp();" required="">
                             <input type="submit" class="searchbox-submit" value="">
                             <span class="searchbox-icon"><i class="pe-7s-search"></i></span>
                         </form>

@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '<YOUR SECRET KEY>'
+SECRET_KEY = '<ENTER YOUR SECRET KEY>'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -142,6 +142,6 @@ else:
     STRIPE_PUBLISHABLE_KEY='YOUR STRIPE LIVE PUB KEY'
     STRIPE_SECRET_KEY="YOUR STRIPE LIVE SECRET KEY"
 
-PAYPAL_RECEIVER_EMAIL = '<YOUR EMAIL ID>'
+PAYPAL_RECEIVER_EMAIL = '<ENTER YOUR EMAIL ID>'
 
 PAYPAL_TEST = True
